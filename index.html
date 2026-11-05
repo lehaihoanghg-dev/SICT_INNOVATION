@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="vi" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dự án Đổi mới sáng tạo: Nghiên cứu các lỗi thường gặp và đề xuất giải pháp tối ưu hóa phương pháp làm bài tập tự luận cho sinh viên bằng AI.">
-  <title>AI Đồng Hành Giải & Trình Bày Tự Luận | Dự Án Đổi Mới Sáng Tạo</title>
-  
-  <!-- Google Fonts: Be Vietnam Pro hỗ trợ tiếng Việt chuẩn xác -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Liên kết file CSS (sẽ cung cấp ở bước tiếp theo) -->
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dự án Đổi mới sáng tạo: AI đồng hành cùng sinh viên giải và trình bày bài tập tự luận theo nguyên tắc Đồng hành từng bước, làm mẫu có điều kiện." />
+  <title>AI Đồng Hành Bài Tự Luận | The Five Outlaws</title>
+
+  <!-- Google Fonts: Be Vietnam Pro hỗ trợ hiển thị tiếng Việt rõ nét -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Liên kết tới file CSS (sẽ tạo ở bước tiếp theo) -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Skip link hỗ trợ điều hướng bằng bàn phím -->
+  <!-- Liên kết bỏ qua điều hướng hỗ trợ truy cập bàn phím (Accessibility) -->
   <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
 
-  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <!-- =====================================================================
+       HEADER & THANH ĐIỀU HƯỚNG CỐ ĐỊNH (FIXED NAVBAR)
+       ===================================================================== -->
   <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a href="#hero" class="brand-logo" aria-label="Trang chủ dự án AI Đồng Hành">
-        <span class="logo-icon" aria-hidden="true">✍️</span>
-        <div class="logo-text">
-          <span class="logo-title">AI Tự Luận</span>
-          <span class="logo-subtitle">Đồng hành • Không làm hộ</span>
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Trang chủ dự án AI Đồng Hành Tự Luận">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <div class="brand-text">
+          <span class="brand-title">AI Tự Luận</span>
+          <span class="brand-sub">The Five Outlaws</span>
         </div>
       </a>
 
+      <!-- Menu điều hướng chính -->
       <nav class="main-nav" id="main-nav" aria-label="Điều hướng chính">
         <ul class="nav-list">
           <li><a href="#hero" class="nav-link active">Trang chủ</a></li>
@@ -42,56 +50,62 @@
         </ul>
       </nav>
 
-      <div class="header-actions">
-        <!-- Nút chuyển đổi giao diện Sáng / Tối -->
-        <button type="button" id="theme-toggle" class="btn-icon" aria-label="Chuyển đổi chế độ Sáng và Tối" title="Đổi giao diện Sáng/Tối">
+      <!-- Cụm nút chức năng: Đổi giao diện Sáng/Tối & Hamburger Mobile -->
+      <div class="nav-actions">
+        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Chuyển đổi chế độ sáng tối" title="Chuyển chế độ Sáng / Tối">
           <span class="theme-icon-light" aria-hidden="true">☀️</span>
           <span class="theme-icon-dark" aria-hidden="true">🌙</span>
         </button>
 
-        <!-- Nút Hamburger cho thiết bị di động -->
-        <button type="button" id="mobile-menu-btn" class="btn-hamburger" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="main-nav">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+        <button type="button" id="mobile-menu-btn" class="hamburger-btn" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="main-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ==================== MAIN CONTENT ==================== -->
   <main id="main-content">
-
-    <!-- ==================== HERO SECTION (TRANG CHỦ) ==================== -->
+    <!-- ===================================================================
+         HERO SECTION (TRANG CHỦ)
+         =================================================================== -->
     <section id="hero" class="hero-section section-padding">
       <div class="container hero-grid">
-        
-        <!-- Cột trái: Thông điệp đề tài -->
-        <div class="hero-content reveal-item">
+        <!-- Cột trái: Thông điệp chính -->
+        <div class="hero-content reveal">
           <div class="badge-group">
-            <span class="badge badge-primary">Dự án Đổi mới sáng tạo</span>
-            <span class="badge badge-outline">Giáo dục Đại học</span>
+            <span class="badge badge-primary">Dự án Đổi mới Sáng tạo</span>
+            <span class="badge badge-outline">Nhóm: The Five Outlaws</span>
           </div>
-          
+
+          <p class="project-full-name">
+            Đề tài: Nghiên cứu các lỗi thường gặp và đề xuất giải pháp tối ưu hóa phương pháp làm bài tập tự luận cho sinh viên bằng AI
+          </p>
+
           <h1 class="hero-title">
-            AI đồng hành cùng sinh viên <span class="text-accent">giải và trình bày</span> bài tập tự luận
+            AI đồng hành cùng sinh viên <span class="text-gradient">giải và trình bày</span> bài tập tự luận
           </h1>
-          
-          <p class="hero-fullname">
-            <strong>Tên đầy đủ đề tài:</strong> Nghiên cứu các lỗi thường gặp và đề xuất giải pháp tối ưu hóa phương pháp làm bài tập tự luận cho sinh viên bằng AI.
+
+          <p class="hero-tagline">
+            “Đi cùng bạn từng bước giải. Giúp bạn trình bày để được điểm.”
           </p>
-          
-          <blockquote class="hero-tagline">
-            “Không làm hộ bài. Giúp bạn giải đúng và trình bày để được điểm.”
-          </blockquote>
-          
-          <p class="hero-desc">
-            Nền tảng hỗ trợ kép ở cả 2 khâu: <strong>(1) Tìm hướng giải</strong> theo từng nấc gợi ý và <strong>(2) Chuẩn hóa trình bày</strong> theo đúng khung phương pháp của môn học.
-          </p>
+
+          <div class="core-principle-banner">
+            <div class="principle-header">
+              <span class="principle-icon" aria-hidden="true">🛡️</span>
+              <strong>Nguyên tắc cốt lõi: Đồng hành từng bước, làm mẫu có điều kiện</strong>
+            </div>
+            <ul class="principle-quick-list">
+              <li><strong>Đồng hành bước giải:</strong> Gợi ý 3 mức từ nhẹ đến chi tiết để sinh viên tự tìm hướng giải.</li>
+              <li><strong>Lời giải mẫu có điều kiện:</strong> Chỉ mở sau khi sinh viên đã tự thử hoặc dùng hết 3 mức gợi ý; giải thích rõ <em>"vì sao làm vậy"</em> theo đúng khung.</li>
+              <li><strong>Chuẩn hóa trình bày:</strong> Gợi ý sắp xếp lại bài làm đúng bố cục môn học nhưng giữ nguyên ý và cách giải của sinh viên.</li>
+            </ul>
+          </div>
 
           <div class="hero-cta-group">
             <a href="#demo" class="btn btn-primary btn-lg">
-              <span>Trải nghiệm bản Demo</span>
+              <span>Xem bản demo</span>
               <span aria-hidden="true">→</span>
             </a>
             <a href="#van-de" class="btn btn-secondary btn-lg">
@@ -100,387 +114,376 @@
           </div>
         </div>
 
-        <!-- Cột phải: Minh họa động bằng CSS & HTML -->
-        <div class="hero-visual reveal-item" aria-label="Minh họa cách AI phát hiện thiếu bước và gợi ý trình bày">
+        <!-- Cột phải: Minh họa động bằng CSS (Bài làm thiếu bước -> AI gợi ý bổ sung) -->
+        <div class="hero-visual reveal" aria-label="Minh họa cách AI phát hiện bước thiếu và gợi ý trình bày">
           <div class="mockup-window">
             <div class="mockup-header">
-              <div class="window-dots" aria-hidden="true">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <span class="mockup-title">bai-tap-tu-luan-sv.doc</span>
-              <span class="mockup-status">Đang đối chiếu khung trình bày...</span>
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="mockup-title">Minh họa: Soát lỗi &amp; Đồng hành trình bày</span>
             </div>
 
             <div class="mockup-body">
-              <!-- Bài làm gốc của sinh viên -->
-              <div class="student-paper">
-                <div class="paper-line">
-                  <span class="line-label">Đề bài:</span> Tính độ phức tạp thời gian của thuật toán tìm kiếm nhị phân trên mảng đã sắp xếp $n$ phần tử.
+              <!-- Phần bài làm gốc của sinh viên -->
+              <div class="mockup-card student-draft">
+                <div class="mockup-card-label">
+                  <span>📝 Bài làm ban đầu của sinh viên</span>
+                  <span class="status-pill status-warn">Thiếu bước &amp; kết luận</span>
                 </div>
-                
-                <div class="paper-line">
-                  <span class="line-label">Bài làm của SV:</span> Mỗi lần lặp khoảng tìm kiếm giảm đi một nửa.
-                </div>
-
-                <!-- Vùng bị đánh dấu thiếu bước (CSS Animation) -->
-                <div class="paper-line missing-step-highlight">
-                  <span class="warning-tag">⚠️ Thiếu công thức & bước biến đổi trung gian</span>
-                  <div class="ai-typing-suggestion">
-                    <span class="ai-avatar">🤖 Gợi ý khung:</span>
-                    <span class="typing-text">Cần nêu hệ thức truy hồi T(n) = T(n/2) + c và điều kiện dừng T(1) = 1 trước khi ra đáp án.</span>
-                  </div>
-                </div>
-
-                <div class="paper-line">
-                  <span>Suy ra độ phức tạp là $O(\log n)$.</span>
-                </div>
-
-                <div class="paper-line missing-conclusion-highlight">
-                  <span class="warning-tag">⚠️ Quên câu kết luận tổng hợp theo yêu cầu đề</span>
+                <div class="draft-lines">
+                  <p class="draft-line"><strong>Đề:</strong> Tính điện trở tương đương mạch nối tiếp R1 = 4Ω, R2 = 6Ω khi U = 20V, suy ra cường độ dòng điện I.</p>
+                  <p class="draft-line">Ta có: R<sub>tđ</sub> = 4 + 6 = 10Ω</p>
+                  <p class="draft-line highlight-missing">
+                    <span class="strike-text">Suy ra I = 2A.</span>
+                    <span class="inline-alert">⚠️ Đi thẳng ra đáp số, thiếu công thức định luật Ôm &amp; kết luận!</span>
+                  </p>
                 </div>
               </div>
 
-              <!-- Thanh trạng thái đối chiếu -->
-              <div class="mockup-footer">
-                <div class="check-pill check-ok">✓ Đúng hướng giải</div>
-                <div class="check-pill check-warn">! Thiếu 2 mục trình bày</div>
-                <div class="check-pill check-lock">🔒 Không giải hộ</div>
+              <!-- Mũi tên chuyển tiếp -->
+              <div class="mockup-connector" aria-hidden="true">
+                <span class="pulse-badge">🤖 AI Đồng hành &amp; Gợi ý khung trình bày</span>
+              </div>
+
+              <!-- Phần AI gợi ý bổ sung (Hiệu ứng CSS gõ chữ & highlight) -->
+              <div class="mockup-card ai-coaching">
+                <div class="mockup-card-label">
+                  <span>✨ Gợi ý bổ sung theo Khung bài tính toán</span>
+                  <span class="status-pill status-ok">Giữ nguyên cách giải của SV</span>
+                </div>
+                <div class="ai-typing-box">
+                  <div class="frame-step step-done">
+                    <span class="step-tag">[1. Dữ kiện &amp; Công thức]</span>
+                    <span class="typing-line line-1">Áp dụng công thức R<sub>tđ</sub> = R<sub>1</sub> + R<sub>2</sub> và Định luật Ôm: I = U / R<sub>tđ</sub></span>
+                  </div>
+                  <div class="frame-step step-done">
+                    <span class="step-tag">[2. Thay số &amp; Biến đổi]</span>
+                    <span class="typing-line line-2">R<sub>tđ</sub> = 4 + 6 = 10 (Ω) ⇒ I = 20 / 10 = 2 (A)</span>
+                  </div>
+                  <div class="frame-step step-added">
+                    <span class="step-tag">[3. Kết luận chuẩn]</span>
+                    <span class="typing-line line-3">Vậy điện trở tương đương là 10Ω và cường độ dòng điện trong mạch là 2A.</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ==================== MỤC 1: MỨC ĐỘ CẦN THIẾT & THỰC TẾ ==================== -->
+    <!-- ===================================================================
+         MỤC 1: MỨC ĐỘ CẦN THIẾT VÀ THỰC TẾ CỦA VẤN ĐỀ
+         =================================================================== -->
     <section id="van-de" class="section-padding bg-alt">
       <div class="container">
-        
-        <div class="section-header reveal-item">
-          <span class="section-eyebrow">Mục 1 • Bối cảnh & Thực trạng</span>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Mục 1 • Bối cảnh &amp; Thực trạng</span>
           <h2 class="section-title">Mức độ cần thiết và thực tế của vấn đề</h2>
           <p class="section-lead">
-            “Làm tốt bài tự luận cần 2 việc: <strong>giải được bài</strong> và <strong>trình bày được lời giải</strong>.”
+            <strong>“Làm tốt bài tự luận cần 2 việc: giải được bài và trình bày được lời giải.”</strong>
+            Thực tế, nhiều sinh viên nắm được ý tưởng hoặc tính ra đáp số nhưng vẫn mất điểm đáng tiếc vì hổng kỹ năng diễn đạt và bố cục.
           </p>
         </div>
 
-        <!-- 1.1. Bảng 6 lỗi trình bày thường gặp -->
-        <div class="subsection reveal-item">
-          <div class="subsection-title-wrap">
-            <h3 class="subsection-title">6 lỗi trình bày bài tự luận thường gặp ở sinh viên</h3>
-            <span class="subsection-note">Quét nhanh nguyên nhân khiến sinh viên hiểu bài nhưng vẫn mất điểm</span>
-          </div>
-
+        <!-- 1.1 Bảng 6 lỗi trình bày thường gặp -->
+        <div class="subsection reveal">
+          <h3 class="subsection-title">6 lỗi trình bày bài tự luận thường gặp</h3>
           <div class="table-responsive">
             <table class="data-table">
               <thead>
                 <tr>
                   <th scope="col" class="col-stt">#</th>
                   <th scope="col">Lỗi thường gặp</th>
-                  <th scope="col">Biểu hiện trong bài làm</th>
+                  <th scope="col">Biểu hiện cụ thể trong bài làm</th>
                   <th scope="col">Hệ quả khi chấm điểm</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">01</span></td>
+                  <td><span class="num-badge">1</span></td>
                   <td><strong>Bỏ bước biến đổi</strong></td>
-                  <td>Đi thẳng từ đề bài sang đáp án cuối cùng.</td>
-                  <td><span class="status-consequence">Người chấm không thấy quá trình tư duy, dễ bị trừ điểm bước trung gian.</span></td>
+                  <td>Đi thẳng từ đề bài sang đáp án cuối cùng, bỏ qua các bước trung gian.</td>
+                  <td><span class="consequence-tag">Người chấm không thấy quá trình tư duy, dễ bị trừ điểm bước giải.</span></td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">02</span></td>
+                  <td><span class="num-badge">2</span></td>
                   <td><strong>Thiếu công thức hoặc căn cứ</strong></td>
-                  <td>Thay số tính luôn, không nêu công thức gốc hay nguyên lý áp dụng.</td>
-                  <td><span class="status-consequence">Lời giải thiếu thuyết phục dù kết quả tính toán cuối cùng đúng.</span></td>
+                  <td>Thay số tính luôn hoặc khẳng định mà không nêu công thức, định lý, nguyên lý.</td>
+                  <td><span class="consequence-tag">Lời giải thiếu thuyết phục và thiếu căn cứ khoa học dù kết quả đúng.</span></td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">03</span></td>
+                  <td><span class="num-badge">3</span></td>
                   <td><strong>Thiếu dẫn chứng</strong></td>
-                  <td>Nêu nhận định chung chung mà không có ví dụ thực tế hoặc số liệu.</td>
-                  <td><span class="status-consequence">Lập luận yếu, mang tính cảm tính, không đạt điểm phân tích sâu.</span></td>
+                  <td>Nêu nhận định chung chung nhưng không kèm ví dụ thực tế hay số liệu minh họa.</td>
+                  <td><span class="consequence-tag">Lập luận yếu, mang tính cảm tính, không đạt điểm phân tích sâu.</span></td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">04</span></td>
+                  <td><span class="num-badge">4</span></td>
                   <td><strong>Quên kết luận</strong></td>
-                  <td>Dừng bài ngay sau bước tính toán/phân tích cuối mà không tổng hợp đáp án.</td>
-                  <td><span class="status-consequence">Bài làm bị đánh giá là chưa hoàn chỉnh, mất điểm phần kết.</span></td>
+                  <td>Tính hoặc phân tích xong thì dừng đột ngột, không tổng hợp lại đáp án gắn với câu hỏi.</td>
+                  <td><span class="consequence-tag">Bài làm bị đánh giá là chưa hoàn chỉnh, mất điểm phần kết bài.</span></td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">05</span></td>
+                  <td><span class="num-badge">5</span></td>
                   <td><strong>Dài dòng, lạc trọng tâm</strong></td>
-                  <td>Viết rất nhiều chữ nhưng lan man, không bám sát câu hỏi của đề.</td>
-                  <td><span class="status-consequence">Ý chính bị loãng, mất thời gian làm bài nhưng không trúng barem chấm.</span></td>
+                  <td>Viết rất nhiều chữ, lan man sang kiến thức lân cận nhưng không bám sát câu hỏi chính.</td>
+                  <td><span class="consequence-tag">Ý chính bị loãng, tốn thời gian làm bài nhưng không trúng thang điểm.</span></td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">06</span></td>
+                  <td><span class="num-badge">6</span></td>
                   <td><strong>Sai trình tự mong muốn</strong></td>
-                  <td>Các ý đều đúng nhưng sắp xếp lộn xộn, không theo cấu trúc giảng viên yêu cầu.</td>
-                  <td><span class="status-consequence">Gây khó khăn khi theo dõi mạch bài, mất điểm bố cục trình bày.</span></td>
+                  <td>Có đủ ý đúng nhưng sắp xếp lộn xộn, không theo cấu trúc chuẩn mà giảng viên yêu cầu.</td>
+                  <td><span class="consequence-tag">Gây khó khăn khi chấm, mất điểm bố cục và tính hệ thống.</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 1.2. Hai nhóm 3 thẻ: Vì sao cần giải quyết & Ai bị ảnh hưởng -->
-        <div class="dual-grid-section">
-          
-          <!-- Khối 3 thẻ: Vì sao cần giải quyết -->
-          <div class="subsection reveal-item">
+        <!-- 1.2 Ba thẻ "Vì sao cần giải quyết" & Ba thẻ "Ai bị ảnh hưởng" -->
+        <div class="dual-grid subsection reveal">
+          <!-- Khối: Vì sao cần giải quyết -->
+          <div class="info-panel">
             <h3 class="subsection-title">Vì sao cần giải quyết ngay?</h3>
-            <div class="cards-stack">
-              <article class="info-card">
+            <div class="card-stack">
+              <article class="feature-card">
                 <div class="card-icon" aria-hidden="true">🌐</div>
-                <div class="card-body">
-                  <h4>Xảy ra ở mọi ngành học</h4>
-                  <p>Từ các môn tính toán kỹ thuật, lập trình CNTT cho đến phân tích tình huống kinh tế, du lịch hay bài luận ngôn ngữ đều yêu cầu trình bày tự luận có cấu trúc.</p>
+                <div>
+                  <h4>1. Xảy ra ở mọi ngành học</h4>
+                  <p>Từ bài tính toán kỹ thuật, lập trình CNTT đến phân tích tình huống kinh tế, du lịch hay bài luận ngôn ngữ đều yêu cầu trình bày tự luận có cấu trúc.</p>
                 </div>
               </article>
 
-              <article class="info-card">
+              <article class="feature-card">
                 <div class="card-icon" aria-hidden="true">👥</div>
-                <div class="card-body">
-                  <h4>Sinh viên rất khó được góp ý chi tiết</h4>
-                  <p>Quy mô lớp đại học thường đông, giảng viên không đủ thời gian sửa từng dòng lập luận hay chỉ rõ từng bước bị thiếu cho mỗi cá nhân ở bài tập thường kỳ.</p>
+                <div>
+                  <h4>2. Sinh viên rất khó được góp ý chi tiết</h4>
+                  <p>Quy mô lớp đại học đông khiến giảng viên khó có đủ thời gian sửa từng câu chữ hay chỉ rõ từng bước bị thiếu cho mỗi cá nhân trong các bài luyện tập.</p>
                 </div>
               </article>
 
-              <article class="info-card">
+              <article class="feature-card">
                 <div class="card-icon" aria-hidden="true">🤖</div>
-                <div class="card-body">
-                  <h4>Công cụ hiện có chưa giải quyết đúng chỗ</h4>
-                  <p>Các chatbot phổ biến hiện nay thường đưa ngay lời giải hoàn chỉnh khiến sinh viên dễ sao chép thụ động, thay vì rèn kỹ năng tự lập luận và tự trình bày.</p>
+                <div>
+                  <h4>3. Công cụ hiện có chưa đúng chỗ</h4>
+                  <p>Các chatbot thông thường có xu hướng đưa ngay toàn bộ đáp án hoàn chỉnh, ít giải thích lý do từng bước và không rèn kỹ năng tự trình bày cho sinh viên.</p>
                 </div>
               </article>
             </div>
           </div>
 
-          <!-- Khối 3 thẻ: Ai bị ảnh hưởng -->
-          <div class="subsection reveal-item">
-            <h3 class="subsection-title">Ai đang chịu ảnh hưởng trực tiếp?</h3>
-            <div class="cards-stack">
-              <article class="info-card card-border-accent">
+          <!-- Khối: Ai bị ảnh hưởng -->
+          <div class="info-panel">
+            <h3 class="subsection-title">Ai bị ảnh hưởng trực tiếp?</h3>
+            <div class="card-stack">
+              <article class="feature-card accent-border">
                 <div class="card-icon" aria-hidden="true">🎓</div>
-                <div class="card-body">
+                <div>
                   <h4>Sinh viên</h4>
-                  <p>Hiểu bản chất nhưng điểm vẫn thấp vì mất điểm trình bày; tâm lý ngại hỏi hoặc phụ thuộc vào việc chép đáp án mẫu từ AI mà không hiểu cách viết.</p>
+                  <p>Hiểu bài nhưng điểm chưa tương xứng; lúng túng khi bắt đầu viết; dễ nảy sinh tâm lý chép lời giải từ AI vì không biết cách tự triển khai từng bước.</p>
                 </div>
               </article>
 
-              <article class="info-card card-border-accent">
-                <div class="card-icon" aria-hidden="true">🧑‍🏫</div>
-                <div class="card-body">
+              <article class="feature-card accent-border">
+                <div class="card-icon" aria-hidden="true">👩‍🏫</div>
+                <div>
                   <h4>Giảng viên</h4>
-                  <p>Tốn nhiều công sức chấm những bài tự luận thiếu đầu thiếu đuôi, lặp đi lặp lại cùng một lỗi trình bày cơ bản qua nhiều khóa sinh viên.</p>
+                  <p>Mất nhiều thời gian đọc các bài viết lộn xộn, thiếu bước; phải lặp đi lặp lại những nhắc nhở giống nhau về bố cục ở nhiều khóa sinh viên.</p>
                 </div>
               </article>
 
-              <article class="info-card card-border-accent">
+              <article class="feature-card accent-border">
                 <div class="card-icon" aria-hidden="true">🏛️</div>
-                <div class="card-body">
+                <div>
                   <h4>Nhà trường</h4>
-                  <p>Khó chuẩn hóa năng lực diễn đạt học thuật và tư duy phản biện của người học trước làn sóng lạm dụng công cụ sinh văn bản tự động.</p>
+                  <p>Chất lượng bài thi tự luận và năng lực lập luận học thuật của sinh viên chưa đồng đều; cần công cụ hỗ trợ học tập minh bạch, chống gian lận AI.</p>
                 </div>
               </article>
             </div>
           </div>
-
         </div>
 
-        <!-- 1.3. Sơ đồ "Vòng lặp mất điểm" 4 bước (Hover hiện khoảng trống cần lấp) -->
-        <div class="subsection reveal-item">
-          <div class="subsection-title-wrap">
-            <h3 class="subsection-title">Sơ đồ “Vòng lặp mất điểm” trong học tập tự luận</h3>
-            <span class="subsection-note">💡 Di chuột (hoặc chạm) vào từng bước để xem <strong>khoảng trống cần lấp</strong></span>
+        <!-- 1.3 Sơ đồ "Vòng lặp mất điểm" 4 bước (Hover/Focus hiện khoảng trống cần lấp) -->
+        <div class="subsection reveal">
+          <div class="loop-header">
+            <h3 class="subsection-title">Sơ đồ “Vòng lặp mất điểm” trong bài tự luận</h3>
+            <p class="helper-text">💡 <em>Di chuột (hover) hoặc chạm vào từng bước để xem <strong>“Khoảng trống cần lấp”</strong> mà dự án hướng tới giải quyết.</em></p>
           </div>
 
-          <div class="loop-diagram" role="list" aria-label="Vòng lặp 4 bước gây mất điểm tự luận">
-            
+          <div class="cycle-diagram" role="list" aria-label="Vòng lặp 4 bước gây mất điểm bài tự luận">
             <!-- Bước 1 -->
-            <div class="loop-node" role="listitem" tabindex="0">
-              <div class="loop-step-header">
-                <span class="loop-step-num">Bước 1</span>
-                <span class="loop-arrow" aria-hidden="true">↻</span>
+            <div class="cycle-node" role="listitem" tabindex="0">
+              <div class="cycle-step-badge">Bước 1</div>
+              <h4 class="cycle-title">SV làm bài, thiếu bước / kết luận</h4>
+              <p class="cycle-desc">Tập trung tìm ra đáp số nhanh mà bỏ qua dẫn dắt công thức và kết luận.</p>
+              <div class="cycle-gap">
+                <span class="gap-label">🔍 Khoảng trống cần lấp:</span>
+                <strong>Chưa có khung trình bày chuẩn ngay trước mắt để tự đối chiếu khi viết.</strong>
               </div>
-              <h4 class="loop-title">SV làm bài, thiếu bước / kết luận</h4>
-              <p class="loop-desc">Tập trung tìm ra đáp số nhưng bỏ qua quy chuẩn trình bày.</p>
-              <div class="loop-gap-reveal">
-                <strong>Khoảng trống cần lấp:</strong> Chưa có khung trình bày chuẩn để sinh viên tự đối chiếu trước khi nộp.
-              </div>
+              <span class="cycle-arrow" aria-hidden="true">➔</span>
             </div>
 
             <!-- Bước 2 -->
-            <div class="loop-node" role="listitem" tabindex="0">
-              <div class="loop-step-header">
-                <span class="loop-step-num">Bước 2</span>
-                <span class="loop-arrow" aria-hidden="true">↻</span>
+            <div class="cycle-node" role="listitem" tabindex="0">
+              <div class="cycle-step-badge">Bước 2</div>
+              <h4 class="cycle-title">GV chấm, ghi nhận xét ngắn</h4>
+              <p class="cycle-desc">Do số lượng bài lớn, bài kiểm tra thường chỉ có điểm số hoặc gạch chân ngắn.</p>
+              <div class="cycle-gap">
+                <span class="gap-label">🔍 Khoảng trống cần lấp:</span>
+                <strong>Giảng viên không đủ thời gian góp ý chi tiết từng bước cho mọi bài luyện tập.</strong>
               </div>
-              <h4 class="loop-title">GV chấm, ghi nhận xét ngắn</h4>
-              <p class="loop-desc">Chấm số lượng lớn bài kiểm tra trong thời gian giới hạn.</p>
-              <div class="loop-gap-reveal">
-                <strong>Khoảng trống cần lấp:</strong> Giảng viên không đủ thời gian góp ý chi tiết từng dòng cho từng sinh viên.
-              </div>
+              <span class="cycle-arrow" aria-hidden="true">➔</span>
             </div>
 
             <!-- Bước 3 -->
-            <div class="loop-node" role="listitem" tabindex="0">
-              <div class="loop-step-header">
-                <span class="loop-step-num">Bước 3</span>
-                <span class="loop-arrow" aria-hidden="true">↻</span>
+            <div class="cycle-node" role="listitem" tabindex="0">
+              <div class="cycle-step-badge">Bước 3</div>
+              <h4 class="cycle-title">SV nhận điểm, không rõ mất ở đâu</h4>
+              <p class="cycle-desc">Thấy kết quả cuối cùng đúng nhưng điểm thấp, không biết mình thiếu ý nào.</p>
+              <div class="cycle-gap">
+                <span class="gap-label">🔍 Khoảng trống cần lấp:</span>
+                <strong>Thiếu giải thích cụ thể vì sao mất điểm và hướng sửa lại câu chữ.</strong>
               </div>
-              <h4 class="loop-title">SV nhận điểm, không rõ mất ở đâu</h4>
-              <p class="loop-desc">Chỉ thấy điểm tổng hoặc gạch chân ngắn, không rõ cách viết lại.</p>
-              <div class="loop-gap-reveal">
-                <strong>Khoảng trống cần lấp:</strong> Thiếu giải thích cụ thể lý do mất điểm và hướng sửa trực tiếp trên bài làm.
-              </div>
+              <span class="cycle-arrow" aria-hidden="true">➔</span>
             </div>
 
             <!-- Bước 4 -->
-            <div class="loop-node" role="listitem" tabindex="0">
-              <div class="loop-step-header">
-                <span class="loop-step-num">Bước 4</span>
-                <span class="loop-arrow" aria-hidden="true">↺</span>
+            <div class="cycle-node" role="listitem" tabindex="0">
+              <div class="cycle-step-badge">Bước 4</div>
+              <h4 class="cycle-title">Bài sau lặp lại lỗi cũ</h4>
+              <p class="cycle-desc">Thói quen trình bày tắt hoặc thiếu kết luận tiếp tục tái diễn ở các kỳ thi sau.</p>
+              <div class="cycle-gap">
+                <span class="gap-label">🔍 Khoảng trống cần lấp:</span>
+                <strong>Không có hệ thống theo dõi lịch sử lỗi cá nhân để nhắc nhở và luyện tập bù.</strong>
               </div>
-              <h4 class="loop-title">Bài sau lặp lại đúng lỗi cũ</h4>
-              <p class="loop-desc">Thói quen trình bày thiếu sót tiếp diễn ở các môn học tiếp theo.</p>
-              <div class="loop-gap-reveal">
-                <strong>Khoảng trống cần lấp:</strong> Không có công cụ theo dõi lịch sử lỗi cá nhân để nhắc nhở và rèn luyện.
-              </div>
+              <span class="cycle-arrow cycle-arrow-loop" aria-hidden="true">↺</span>
             </div>
-
           </div>
         </div>
 
-        <!-- 1.4. Hộp Kế hoạch khảo sát & Cam kết trung thực -->
-        <div class="survey-box reveal-item">
+        <!-- 1.4 Hộp Kế hoạch khảo sát & Ghi chú trung thực học thuật -->
+        <div class="survey-plan-box reveal">
           <div class="survey-header">
             <div>
-              <span class="badge badge-warning">Kế hoạch thu thập dữ liệu thực nghiệm</span>
-              <h3>Kế hoạch khảo sát thực tế của nhóm dự án</h3>
+              <span class="badge badge-primary">Kế hoạch thu thập dữ liệu thực tế</span>
+              <h3>Kế hoạch khảo sát thực chứng</h3>
             </div>
-            <div class="honesty-stamp">
-              <span aria-hidden="true">🛡️</span>
-              <span><strong>Ghi chú trung thực:</strong> Nhóm không đưa ra con số khi chưa kiểm chứng.</span>
+            <div class="honesty-banner" role="note">
+              <span aria-hidden="true">⚖️</span>
+              <strong>Nguyên tắc trung thực:</strong> Nhóm không đưa ra con số khi chưa kiểm chứng. Tuyệt đối không tự bịa số liệu thống kê hay phần trăm giả định.
             </div>
           </div>
 
           <div class="survey-grid">
-            <div class="survey-item">
-              <h4>1. Đối tượng khảo sát dự kiến</h4>
-              <p>Sinh viên các khối ngành (Kỹ thuật/CNTT, Kinh tế, Du lịch, Ngôn ngữ) và giảng viên trực tiếp giảng dạy, chấm thi các học phần có bài tập/thi tự luận tại <strong>[Tên trường đại học]</strong>.</p>
+            <div class="survey-card">
+              <h4>🎯 Đối tượng khảo sát</h4>
+              <p>Sinh viên các nhóm ngành (Kỹ thuật/CNTT, Kinh tế/Du lịch, Ngôn ngữ) và giảng viên trực tiếp chấm bài tự luận tại <strong>[Tên Trường / Khoa khảo sát]</strong>.</p>
             </div>
-            <div class="survey-item">
-              <h4>2. Nội dung hỏi Sinh viên</h4>
-              <p>Khó khăn khi bắt đầu giải bài tự luận; thói quen kiểm tra lại các bước trình bày; tần suất bị trừ điểm dù ra đúng đáp số; cách đang sử dụng các công cụ AI hiện tại.</p>
+            <div class="survey-card">
+              <h4>📋 Nội dung hỏi Sinh viên</h4>
+              <p>Khó khăn khi tìm hướng giải và trình bày; các lỗi từng bị trừ điểm; thói quen dùng AI hiện tại; mong muốn về công cụ gợi ý từng bước.</p>
             </div>
-            <div class="survey-item">
-              <h4>3. Nội dung hỏi Giảng viên</h4>
-              <p>Các lỗi trình bày phổ biến nhất khiến sinh viên mất điểm đáng tiếc; cấu trúc lời giải chuẩn mà giảng viên kỳ vọng ở từng dạng bài; thời gian trung bình dành cho việc nhận xét bài.</p>
+            <div class="survey-card">
+              <h4>📋 Nội dung hỏi Giảng viên</h4>
+              <p>Các lỗi trình bày phổ biến nhất khi chấm thi; cấu trúc bài làm chuẩn mong đợi ở từng học phần; quan điểm về giới hạn AI hỗ trợ sinh viên.</p>
             </div>
-            <div class="survey-item">
-              <h4>4. Mục đích sử dụng kết quả</h4>
-              <p>Xác thực mức độ phổ biến của 6 nhóm lỗi trình bày, làm căn cứ tinh chỉnh "Thư viện khung trình bày" sát với thực tế chấm thi trước khi triển khai thử nghiệm diện rộng.</p>
+            <div class="survey-card">
+              <h4>🛠️ Kết quả dùng để làm gì?</h4>
+              <p>Xác thực danh mục lỗi ưu tiên, chuẩn hóa bộ “Khung trình bày theo dạng bài” sát thực tế môn học và tinh chỉnh thuật toán phản hồi.</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ==================== MỤC 2: TÍNH KHẢ THI ==================== -->
+    <!-- ===================================================================
+         MỤC 2: TÍNH KHẢ THI CỦA GIẢI PHÁP
+         =================================================================== -->
     <section id="kha-thi" class="section-padding">
       <div class="container">
-        
-        <div class="section-header reveal-item">
-          <span class="section-eyebrow">Mục 2 • Giải pháp & Triển khai</span>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Mục 2 • Kiến trúc &amp; Lộ trình</span>
           <h2 class="section-title">Tính khả thi của dự án</h2>
           <p class="section-lead">
-            Thiết kế quy trình rõ ràng, tận dụng công nghệ sẵn có kết hợp thư viện khung chuẩn hóa có sự rà soát của giảng viên.
+            Giải pháp được thiết kế theo luồng 4 bước rõ ràng, tận dụng công nghệ mô hình ngôn ngữ sẵn có kết hợp với thư viện khung trình bày được kiểm duyệt.
           </p>
         </div>
 
-        <!-- 2.1. Quy trình 4 bước dạng Stepper ngang (bấm từng bước xem chi tiết) -->
-        <div class="subsection reveal-item">
-          <div class="subsection-title-wrap">
-            <h3 class="subsection-title">Quy trình hoạt động 4 bước của hệ thống</h3>
-            <span class="subsection-note">👆 Bấm vào từng bước để xem cơ chế vận hành chi tiết</span>
-          </div>
+        <!-- 2.1 Quy trình 4 bước dạng Stepper ngang tương tác -->
+        <div class="subsection reveal">
+          <h3 class="subsection-title">Quy trình vận hành 4 bước (Bấm từng bước để xem chi tiết)</h3>
 
-          <div class="stepper-container">
-            <!-- Thanh nút bấm Stepper -->
-            <div class="stepper-nav" role="tablist" aria-label="Quy trình 4 bước">
-              <button type="button" class="step-btn active" role="tab" aria-selected="true" aria-controls="step-panel-1" id="step-tab-1" data-step="1">
-                <span class="step-circle">B1</span>
+          <div class="stepper-wrapper">
+            <div class="stepper-nav" role="tablist" aria-label="Quy trình 4 bước của hệ thống">
+              <button type="button" class="stepper-btn active" role="tab" aria-selected="true" aria-controls="step-panel-1" id="step-tab-1" data-step="1">
+                <span class="step-num">B1</span>
                 <span class="step-label">Thiết lập đầu vào</span>
               </button>
-              <button type="button" class="step-btn" role="tab" aria-selected="false" aria-controls="step-panel-2" id="step-tab-2" data-step="2">
-                <span class="step-circle">B2</span>
-                <span class="step-label">Gợi ý & Khung (FORM)</span>
+              <button type="button" class="stepper-btn" role="tab" aria-selected="false" aria-controls="step-panel-2" id="step-tab-2" data-step="2">
+                <span class="step-num">B2</span>
+                <span class="step-label">Đồng hành &amp; Khung (FORM)</span>
               </button>
-              <button type="button" class="step-btn" role="tab" aria-selected="false" aria-controls="step-panel-3" id="step-tab-3" data-step="3">
-                <span class="step-circle">B3</span>
-                <span class="step-label">Đánh giá & Phản hồi</span>
+              <button type="button" class="stepper-btn" role="tab" aria-selected="false" aria-controls="step-panel-3" id="step-tab-3" data-step="3">
+                <span class="step-num">B3</span>
+                <span class="step-label">Đánh giá &amp; Phản hồi</span>
               </button>
-              <button type="button" class="step-btn" role="tab" aria-selected="false" aria-controls="step-panel-4" id="step-tab-4" data-step="4">
-                <span class="step-circle">B4</span>
+              <button type="button" class="stepper-btn" role="tab" aria-selected="false" aria-controls="step-panel-4" id="step-tab-4" data-step="4">
+                <span class="step-num">B4</span>
                 <span class="step-label">Cá nhân hóa luyện tập</span>
               </button>
             </div>
 
-            <!-- Nội dung chi tiết từng bước -->
             <div class="stepper-content-box">
-              <!-- Panel B1 -->
-              <div class="step-panel active" id="step-panel-1" role="tabpanel" aria-labelledby="step-tab-1">
+              <!-- Nội dung Bước 1 -->
+              <div id="step-panel-1" class="step-panel active" role="tabpanel" aria-labelledby="step-tab-1">
                 <div class="step-panel-inner">
-                  <div class="step-badge">Bước 1 / 4</div>
-                  <h4>Thiết lập đầu vào bài học</h4>
-                  <p>Sinh viên chọn <strong>Ngành học → Môn học → Dạng câu hỏi tự luận</strong> và nhập đề bài (hoặc tiêu chí chấm nếu giảng viên cung cấp). Hệ thống dùng thông tin này để kích hoạt đúng bộ quy tắc phương pháp của môn đó.</p>
-                  <ul class="step-checklist">
-                    <li>Định danh đúng đặc thù môn học (Tính toán, Lập trình, Tình huống hay Nghị luận).</li>
-                    <li>Tránh việc AI trả lời chung chung không khớp yêu cầu học phần.</li>
+                  <div class="step-badge-large">Bước 1: Thiết lập đầu vào</div>
+                  <h4>Xác định đúng ngữ cảnh môn học trước khi bắt đầu</h4>
+                  <ul class="check-list">
+                    <li>Sinh viên chọn <strong>Ngành học → Môn học → Dạng câu hỏi tự luận</strong> (Tính toán, Phân tích tình huống, Lý thuyết, Lập trình, Luận ngôn ngữ).</li>
+                    <li>Nhập đề bài và (nếu có) tiêu chí chấm điểm của giảng viên.</li>
+                    <li>Hệ thống tự động nạp đúng <strong>Khung trình bày chuẩn</strong> tương ứng với dạng bài đó.</li>
                   </ul>
                 </div>
               </div>
 
-              <!-- Panel B2 -->
-              <div class="step-panel" id="step-panel-2" role="tabpanel" aria-labelledby="step-tab-2" hidden>
+              <!-- Nội dung Bước 2 -->
+              <div id="step-panel-2" class="step-panel" role="tabpanel" aria-labelledby="step-tab-2" hidden>
                 <div class="step-panel-inner">
-                  <div class="step-badge">Bước 2 / 4</div>
-                  <h4>Gợi ý hướng giải và đề xuất khung trình bày (FORM)</h4>
-                  <p>Nếu sinh viên bí ý tưởng, AI mở <strong>gợi ý theo 3 mức độ</strong> (nhắc kiến thức → chỉ bước tiếp theo → phân tích hướng đi) chứ không giải sẵn. Đồng thời, hệ thống hiển thị <strong>Khung trình bày chuẩn (FORM)</strong> dưới dạng checklist để sinh viên bám theo khi viết.</p>
-                  <ul class="step-checklist">
-                    <li>Khóa lời giải mẫu cho đến khi sinh viên tự nộp bài nháp.</li>
-                    <li>Hiển thị rõ các mục bắt buộc phải có trong bài viết.</li>
+                  <div class="step-badge-large">Bước 2: Đồng hành bước giải &amp; Đề xuất khung trình bày (FORM)</div>
+                  <h4>Dẫn dắt tư duy 3 mức và mở lời giải mẫu có điều kiện</h4>
+                  <ul class="check-list">
+                    <li><strong>Phân tích đề &amp; Hiển thị khung (FORM):</strong> Chỉ ra dữ kiện, kiến thức/công thức cần dùng và các mục bắt buộc phải có khi trình bày.</li>
+                    <li><strong>Gợi ý 3 mức tăng dần:</strong> Mức 1 (Nhắc kiến thức liên quan) → Mức 2 (Chỉ bước tiếp theo cần làm) → Mức 3 (Phân tích chi tiết hướng giải).</li>
+                    <li><strong>Lời giải mẫu có điều kiện:</strong> Chỉ khi sinh viên đã tự thử làm bài hoặc đã xem hết 3 mức gợi ý mà vẫn bí, AI mới mở lời giải mẫu chia từng bước, mỗi bước đều giải thích rõ <em>"Làm gì"</em> và <em>"Vì sao làm vậy"</em> theo đúng khung.</li>
                   </ul>
                 </div>
               </div>
 
-              <!-- Panel B3 -->
-              <div class="step-panel" id="step-panel-3" role="tabpanel" aria-labelledby="step-tab-3" hidden>
+              <!-- Nội dung Bước 3 -->
+              <div id="step-panel-3" class="step-panel" role="tabpanel" aria-labelledby="step-tab-3" hidden>
                 <div class="step-panel-inner">
-                  <div class="step-badge">Bước 3 / 4</div>
-                  <h4>Đánh giá bài làm và phản hồi chi tiết</h4>
-                  <p>Sau khi sinh viên nộp bài tự viết, AI đối chiếu bài làm với Khung trình bày để chỉ ra phần <strong>Đã có</strong> và phần <strong>Còn thiếu</strong>, giải thích lý do và gợi ý cách bổ sung.</p>
-                  <ul class="step-checklist">
-                    <li><strong>Nguyên tắc tôn trọng:</strong> AI giữ nguyên cách giải đúng của sinh viên, không ép viết lại theo văn mẫu máy móc.</li>
-                    <li><strong>Minh bạch:</strong> Điểm/mức độ hoàn thiện chỉ là ước lượng tham khảo; giảng viên là người quyết định điểm cuối cùng.</li>
+                  <div class="step-badge-large">Bước 3: Đánh giá bài làm và phản hồi</div>
+                  <h4>Soát lỗi bố cục và gợi ý trình bày lại nhưng giữ nguyên ý sinh viên</h4>
+                  <ul class="check-list">
+                    <li><strong>Đối chiếu theo khung:</strong> Đánh dấu rõ phần nào <em>Đã có</em>, phần nào <em>Đang thiếu</em> (ví dụ: thiếu công thức gốc, bỏ bước thay số, quên kết luận).</li>
+                    <li><strong>Gợi ý viết lại theo khung:</strong> Tự động sắp xếp lại chính câu chữ và cách giải của sinh viên vào đúng các mục của khung chuẩn; phần thiếu sẽ chừa trống kèm hướng dẫn bổ sung.</li>
+                    <li><strong>Minh bạch đánh giá:</strong> Hiển thị mức độ tin cậy của phản hồi; ghi chú rõ <em>"Điểm chỉ là ước lượng tham khảo, giảng viên quyết định điểm cuối cùng."</em></li>
                   </ul>
                 </div>
               </div>
 
-              <!-- Panel B4 -->
-              <div class="step-panel" id="step-panel-4" role="tabpanel" aria-labelledby="step-tab-4" hidden>
+              <!-- Nội dung Bước 4 -->
+              <div id="step-panel-4" class="step-panel" role="tabpanel" aria-labelledby="step-tab-4" hidden>
                 <div class="step-panel-inner">
-                  <div class="step-badge">Bước 4 / 4</div>
-                  <h4>Cá nhân hóa lộ trình luyện tập</h4>
-                  <p>Hệ thống thống kê các lỗi trình bày mà sinh viên mắc phải nhiều lần qua các bài tập (ví dụ: thường xuyên quên nêu điều kiện biên hoặc quên kết luận) để nhắc nhở ở bài kế tiếp và gợi ý bài tập rèn luyện tương ứng.</p>
-                  <ul class="step-checklist">
-                    <li>Giúp sinh viên xóa bỏ thói quen mất điểm lặp đi lặp lại.</li>
-                    <li>Chỉ lưu trữ lịch sử khi sinh viên chủ động bật đồng ý.</li>
+                  <div class="step-badge-large">Bước 4: Cá nhân hóa luyện tập</div>
+                  <h4>Theo dõi thói quen trình bày và đo lường khả năng tự giải</h4>
+                  <ul class="check-list">
+                    <li><strong>Ghi nhận lỗi lặp lại:</strong> Lưu thống kê các lỗi cá nhân hay mắc (ví dụ: quên kết luận 3 lần liên tiếp) để cảnh báo ngay khi làm bài mới.</li>
+                    <li><strong>Theo dõi tỷ lệ tự giải:</strong> Thống kê số bài sinh viên tự nộp so với số lần phải mở lời giải mẫu để đánh giá sự tiến bộ thực chất.</li>
+                    <li><strong>Gợi ý bài luyện tập:</strong> Đề xuất bài tập tương tự để sinh viên tự làm lại ngay sau khi vừa xem lời giải mẫu.</li>
                   </ul>
                 </div>
               </div>
@@ -488,11 +491,11 @@
           </div>
         </div>
 
-        <!-- 2.2. Bảng Khung trình bày theo 5 dạng bài -->
-        <div class="subsection reveal-item">
-          <div class="subsection-title-wrap">
-            <h3 class="subsection-title">Thư viện “Khung trình bày theo dạng bài”</h3>
-            <span class="badge badge-info">📌 Ghi chú: Đây là khung ban đầu, sẽ được giảng viên bộ môn rà soát.</span>
+        <!-- 2.2 Bảng "Khung trình bày theo dạng bài" -->
+        <div class="subsection reveal">
+          <div class="flex-between-header">
+            <h3 class="subsection-title">Khung trình bày đề xuất theo 5 dạng bài</h3>
+            <span class="note-pill">📌 Ghi chú: Đây là khung ban đầu, sẽ được giảng viên rà soát.</span>
           </div>
 
           <div class="table-responsive">
@@ -506,285 +509,307 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>1. Bài tính toán</strong><br><small class="text-muted">(Toán, Lý, Kỹ thuật, Kinh tế lượng)</small></td>
-                  <td>Tóm tắt dữ kiện & đơn vị → Nêu công thức gốc/định lý → Thay số & biến đổi từng bước → Kết quả kèm đơn vị → Kết luận.</td>
-                  <td>Bỏ bước biến đổi trung gian, thiếu công thức căn cứ, quên đơn vị và kết luận.</td>
+                  <td><strong>1. Bài tính toán</strong><br/><span class="text-muted">(Toán, Vật lý, Kỹ thuật, Kinh tế lượng...)</span></td>
+                  <td>
+                    <ol class="compact-ol">
+                      <li>Tóm tắt dữ kiện &amp; đơn vị</li>
+                      <li>Nêu công thức / định luật áp dụng</li>
+                      <li>Thay số &amp; biến đổi từng bước</li>
+                      <li>Kết quả kèm đơn vị chuẩn</li>
+                      <li>Kết luận trả lời câu hỏi đề bài</li>
+                    </ol>
+                  </td>
+                  <td>Chặn lỗi bỏ bước biến đổi, quên nêu công thức gốc, thiếu đơn vị và quên kết luận.</td>
                 </tr>
                 <tr>
-                  <td><strong>2. Phân tích tình huống</strong><br><small class="text-muted">(Du lịch, Quản trị, Luật, Marketing)</small></td>
-                  <td>Xác định vấn đề cốt lõi → Nguyên nhân/Cơ sở lý thuyết → Giải pháp xử lý theo trình tự → Đánh giá tác động & Bài học rút ra.</td>
-                  <td>Dài dòng lạc trọng tâm, xử lý cảm tính thiếu căn cứ, sai trình tự ưu tiên.</td>
+                  <td><strong>2. Phân tích tình huống</strong><br/><span class="text-muted">(Du lịch, Quản trị, Marketing, Luật...)</span></td>
+                  <td>
+                    <ol class="compact-ol">
+                      <li>Tóm tắt vấn đề cốt lõi của tình huống</li>
+                      <li>Phân tích nguyên nhân / các bên liên quan</li>
+                      <li>Đề xuất giải pháp xử lý theo bước</li>
+                      <li>Căn cứ lý thuyết / dẫn chứng thực tế</li>
+                      <li>Bài học phòng ngừa &amp; Kết luận</li>
+                    </ol>
+                  </td>
+                  <td>Chặn lỗi trả lời cảm tính thiếu căn cứ, viết lan man không theo trình tự xử lý.</td>
                 </tr>
                 <tr>
-                  <td><strong>3. Bài luận ngôn ngữ / Xã hội</strong><br><small class="text-muted">(Ngoại ngữ, Văn học, Kỹ năng mềm)</small></td>
-                  <td>Mở bài (dẫn dắt + luận điểm chính) → Thân bài (Luận điểm 1, 2 + Dẫn chứng thực tế) → Kết bài (Khẳng định lại + Thông điệp).</td>
-                  <td>Thiếu dẫn chứng cụ thể, lập luận rời rạc thiếu từ nối, quên đoạn kết tổng hợp.</td>
+                  <td><strong>3. Bài luận ngôn ngữ / Xã hội</strong><br/><span class="text-muted">(Ngoại ngữ, Văn học, Kỹ năng mềm...)</span></td>
+                  <td>
+                    <ol class="compact-ol">
+                      <li>Mở bài: Giới thiệu chủ đề &amp; Luận điểm chính (Thesis)</li>
+                      <li>Thân bài: Các luận cứ + Ví dụ / Dẫn chứng cụ thể</li>
+                      <li>Liên kết đoạn bằng từ nối lập luận</li>
+                      <li>Kết bài: Khẳng định lại luận điểm &amp; Mở rộng</li>
+                    </ol>
+                  </td>
+                  <td>Chặn lỗi thiếu dẫn chứng minh họa, lạc trọng tâm đề bài và cụt ý ở phần kết.</td>
                 </tr>
                 <tr>
-                  <td><strong>4. Bài lý thuyết / Giải thích</strong><br><small class="text-muted">(Cơ sở ngành, Chính trị, Đại cương)</small></td>
-                  <td>Định nghĩa/Khái niệm chuẩn → Phân tích đặc điểm/Bản chất → Ví dụ minh họa thực tiễn → Ý nghĩa/Ứng dụng.</td>
-                  <td>Học vẹt thiếu ví dụ minh họa, trình bày thiếu ý nghĩa ứng dụng thực tế.</td>
+                  <td><strong>4. Bài lý thuyết / Giải thích</strong><br/><span class="text-muted">(Cơ sở ngành, Triết học, Đại cương...)</span></td>
+                  <td>
+                    <ol class="compact-ol">
+                      <li>Định nghĩa / Khái niệm chuẩn xác</li>
+                      <li>Phân tích đặc điểm / Nội dung chính</li>
+                      <li>Ví dụ minh họa thực tiễn</li>
+                      <li>Ý nghĩa / Ứng dụng &amp; Tóm tắt</li>
+                    </ol>
+                  </td>
+                  <td>Chặn lỗi học vẹt thiếu ví dụ thực tế, trình bày lộn xộn thiếu ý tổng kết.</td>
                 </tr>
                 <tr>
-                  <td><strong>5. Bài lập trình / Thuật toán</strong><br><small class="text-muted">(Công nghệ thông tin, Khoa học máy tính)</small></td>
-                  <td>Xác định Input/Output & Ràng buộc → Ý tưởng thuật toán → Mã giả/Code minh họa → Phân tích độ phức tạp (Time/Space) → Kiểm thử biên.</td>
-                  <td>Chỉ viết mỗi đoạn code mà không giải thích ý tưởng, quên đánh giá độ phức tạp và điều kiện biên.</td>
+                  <td><strong>5. Bài lập trình / Thuật toán</strong><br/><span class="text-muted">(Công nghệ thông tin, Khoa học máy tính...)</span></td>
+                  <td>
+                    <ol class="compact-ol">
+                      <li>Xác định Input / Output &amp; Ràng buộc</li>
+                      <li>Ý tưởng thuật toán / Các bước xử lý</li>
+                      <li>Mã giả (Pseudocode) hoặc Code hoàn chỉnh</li>
+                      <li>Đánh giá độ phức tạp (Thời gian / Bộ nhớ)</li>
+                      <li>Kiểm thử với bộ test mẫu &amp; Kết luận</li>
+                    </ol>
+                  </td>
+                  <td>Chặn lỗi chỉ viết mỗi đoạn code trần mà không giải thích ý tưởng, thiếu phân tích độ phức tạp.</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 2.3. Nguồn lực & Công nghệ + Thẻ Kiểm chứng hiệu quả -->
-        <div class="dual-grid-section">
-          
-          <!-- Bảng Nguồn lực và công nghệ -->
-          <div class="subsection reveal-item">
-            <h3 class="subsection-title">Nguồn lực và công nghệ sử dụng</h3>
+        <!-- 2.3 Bảng Nguồn lực & Công nghệ + Cách kiểm chứng hiệu quả -->
+        <div class="dual-grid subsection reveal">
+          <div>
+            <h3 class="subsection-title">Nguồn lực và công nghệ triển khai</h3>
             <div class="table-responsive">
               <table class="data-table compact-table">
                 <thead>
                   <tr>
                     <th scope="col">Hạng mục</th>
-                    <th scope="col">Phương án triển khai khả thi</th>
+                    <th scope="col">Giải pháp khả thi của nhóm</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><strong>Mô hình AI</strong></td>
-                    <td>Tận dụng mô hình ngôn ngữ lớn (LLM) có sẵn qua API, được điều khiển chặt chẽ bằng <strong>System Prompt riêng</strong> (chặn giải hộ, ép chấm theo khung).</td>
+                    <td>Tận dụng các mô hình ngôn ngữ lớn (LLM) có sẵn, điều khiển chặt bằng hệ thống System Prompt thiết kế riêng theo luồng 3 mức.</td>
                   </tr>
                   <tr>
                     <td><strong>Thư viện khung trình bày</strong></td>
-                    <td>Xây dựng dưới dạng dữ liệu có cấu trúc (JSON/Rubric), có sự tham vấn và rà soát của giảng viên chuyên môn.</td>
+                    <td>Xây dựng dưới dạng dữ liệu cấu trúc (JSON/Rule) cho từng dạng bài, có sự tham vấn và rà soát của giảng viên.</td>
                   </tr>
                   <tr>
                     <td><strong>Giao diện Website</strong></td>
-                    <td>Thiết kế Web App gọn nhẹ, ưu tiên trải nghiệm gõ bài và đối chiếu checklist trực quan trên cả máy tính và điện thoại.</td>
+                    <td>Web thuần nhẹ, trực quan, dễ sử dụng trên cả máy tính và điện thoại, không đòi hỏi cài đặt phức tạp.</td>
                   </tr>
                   <tr>
                     <td><strong>Lưu lịch sử lỗi</strong></td>
-                    <td>Lưu trữ cục bộ (LocalStorage) hoặc tài khoản cá nhân <strong>chỉ khi người dùng tích chọn đồng ý</strong>.</td>
+                    <td>Lưu trữ cục bộ hoặc tài khoản học tập <strong>chỉ khi người dùng đồng ý</strong>, phục vụ thống kê lỗi lặp lại.</td>
                   </tr>
                   <tr>
                     <td><strong>Nhân lực thực hiện</strong></td>
-                    <td>Nhóm sinh viên <strong>[Tên nhóm]</strong> phụ trách phát triển kỹ thuật, thiết kế giao diện và khảo sát dưới sự cố vấn của <strong>[Tên giảng viên hướng dẫn]</strong>.</td>
+                    <td>Nhóm 5 thành viên <strong>The Five Outlaws</strong> phụ trách toàn diện từ nghiên cứu học thuật, thiết kế khung, lập trình giao diện đến kiểm thử.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
 
-          <!-- Thẻ Cách kiểm chứng hiệu quả -->
-          <div class="subsection reveal-item">
-            <h3 class="subsection-title">Phương pháp kiểm chứng hiệu quả</h3>
-            <div class="cards-stack">
-              <article class="info-card">
+          <div>
+            <h3 class="subsection-title">Cách kiểm chứng hiệu quả thực tế</h3>
+            <div class="card-stack">
+              <article class="feature-card">
                 <div class="card-icon" aria-hidden="true">📊</div>
-                <div class="card-body">
-                  <h4>1. Đo lường Trước / Sau (Pre-test & Post-test)</h4>
-                  <p>So sánh mức độ đầy đủ các bước trình bày của cùng một nhóm sinh viên trước và sau khi sử dụng công cụ qua một số bài tập tự luận tương đương.</p>
+                <div>
+                  <h4>1. Đo lường Trước / Sau (Pre-test / Post-test)</h4>
+                  <p>So sánh số lượng lỗi trình bày (thiếu bước, thiếu công thức, quên kết luận) của cùng một nhóm sinh viên trước và sau khi sử dụng công cụ.</p>
                 </div>
               </article>
 
-              <article class="info-card">
-                <div class="card-icon" aria-hidden="true">⚖️</div>
-                <div class="card-body">
-                  <h4>2. Giảng viên chấm độc lập (Blind Grading)</h4>
-                  <p>Giảng viên chấm bài theo tiêu chí môn học mà không biết bài nào có sự hỗ trợ rà soát khung của AI để đánh giá khách quan chất lượng trình bày.</p>
+              <article class="feature-card">
+                <div class="card-icon" aria-hidden="true">✅</div>
+                <div>
+                  <h4>2. Chấm độc lập bởi Giảng viên</h4>
+                  <p>Mời giảng viên chấm ẩn danh các bài làm có và không có sự hỗ trợ định hướng khung từ hệ thống để đối chiếu mức độ cải thiện điểm bố cục.</p>
                 </div>
               </article>
 
-              <article class="info-card">
+              <article class="feature-card">
                 <div class="card-icon" aria-hidden="true">🧠</div>
-                <div class="card-body">
+                <div>
                   <h4>3. Kiểm tra khả năng tự giải độc lập</h4>
-                  <p>Sau giai đoạn luyện tập cùng AI, sinh viên làm một bài kiểm tra ngắn không dùng công cụ để đo xem thói quen trình bày đủ bước đã thực sự hình thành hay chưa.</p>
+                  <p>Sau khi sinh viên luyện tập với AI, yêu cầu làm một bài tương tự hoàn toàn không có gợi ý để xác nhận sinh viên thực sự hiểu và nhớ khung trình bày.</p>
                 </div>
               </article>
             </div>
           </div>
-
         </div>
 
-        <!-- 2.4. Timeline lộ trình 4 giai đoạn -->
-        <div class="subsection reveal-item">
+        <!-- 2.4 Timeline lộ trình 4 giai đoạn -->
+        <div class="subsection reveal">
           <h3 class="subsection-title">Lộ trình triển khai 4 giai đoạn</h3>
           <div class="timeline-grid">
-            
-            <div class="timeline-card">
-              <div class="timeline-phase">Giai đoạn 1</div>
-              <h4>Khảo sát thực tế</h4>
-              <p>Thu thập ý kiến sinh viên và giảng viên về các lỗi mất điểm tự luận phổ biến nhất ở từng nhóm môn.</p>
-              <div class="timeline-output">
-                <strong>Kết quả mong đợi:</strong> Báo cáo tổng hợp lỗi thực tế & danh mục yêu cầu từ giảng viên.
+            <div class="timeline-item">
+              <div class="timeline-marker">Giai đoạn 1</div>
+              <h4 class="timeline-title">Khảo sát thực tế</h4>
+              <p class="timeline-desc">Thu thập ý kiến sinh viên và giảng viên về các lỗi mất điểm tự luận phổ biến nhất ở từng môn.</p>
+              <div class="timeline-outcome">
+                <strong>Kết quả mong đợi:</strong> Báo cáo danh mục lỗi thực tế &amp; bộ tiêu chí chấm chuẩn.
               </div>
             </div>
 
-            <div class="timeline-card">
-              <div class="timeline-phase">Giai đoạn 2</div>
-              <h4>Xây dựng thư viện khung</h4>
-              <p>Thiết kế cấu trúc trình bày chuẩn (Checklist) cho 5 dạng bài tự luận và nhờ giảng viên rà soát.</p>
-              <div class="timeline-output">
-                <strong>Kết quả mong đợi:</strong> Bộ thư viện khung trình bày chuẩn hóa & bộ Prompt điều khiển AI.
+            <div class="timeline-item">
+              <div class="timeline-marker">Giai đoạn 2</div>
+              <h4 class="timeline-title">Xây dựng thư viện khung</h4>
+              <p class="timeline-desc">Chuẩn hóa khung trình bày cho 5 dạng bài chính và thiết kế kịch bản gợi ý 3 mức + lời giải mẫu.</p>
+              <div class="timeline-outcome">
+                <strong>Kết quả mong đợi:</strong> Bộ thư viện khung trình bày được giảng viên rà soát.
               </div>
             </div>
 
-            <div class="timeline-card">
-              <div class="timeline-phase">Giai đoạn 3</div>
-              <h4>Làm bản thử nghiệm Web</h4>
-              <p>Phát triển giao diện website tích hợp luồng gợi ý 3 mức độ, chấm đối chiếu khung và lưu hồ sơ lỗi.</p>
-              <div class="timeline-output">
-                <strong>Kết quả mong đợi:</strong> Website nguyên mẫu (Prototype/MVP) vận hành mượt mà.
+            <div class="timeline-item">
+              <div class="timeline-marker">Giai đoạn 3</div>
+              <h4 class="timeline-title">Làm bản thử nghiệm Website</h4>
+              <p class="timeline-desc">Phát triển giao diện web tương tác, tích hợp bộ kiểm tra khung bài làm và hồ sơ theo dõi lỗi lặp lại.</p>
+              <div class="timeline-outcome">
+                <strong>Kết quả mong đợi:</strong> Website MVP hoạt động mượt mà với đầy đủ luồng chức năng.
               </div>
             </div>
 
-            <div class="timeline-card">
-              <div class="timeline-phase">Giai đoạn 4</div>
-              <h4>Thử nghiệm với SV và GV</h4>
-              <p>Cho nhóm sinh viên dùng thử trên bài tập thật, lấy phản hồi từ giảng viên để tinh chỉnh độ chính xác.</p>
-              <div class="timeline-output">
-                <strong>Kết quả mong đợi:</strong> Dữ liệu đánh giá trước/sau thực tế và phiên bản hoàn thiện.
+            <div class="timeline-item">
+              <div class="timeline-marker">Giai đoạn 4</div>
+              <h4 class="timeline-title">Thử nghiệm với SV và GV</h4>
+              <p class="timeline-desc">Cho nhóm sinh viên dùng thử trên bài tập thật, lấy đánh giá từ giảng viên để tinh chỉnh độ chính xác.</p>
+              <div class="timeline-outcome">
+                <strong>Kết quả mong đợi:</strong> Dữ liệu đánh giá hiệu quả trước/sau và sản phẩm hoàn thiện.
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- 2.5. Bảng Rủi ro và cách giảm thiểu (Accordion 5 mục) -->
-        <div class="subsection reveal-item">
-          <div class="subsection-title-wrap">
-            <h3 class="subsection-title">Nhận diện rủi ro và giải pháp giảm thiểu</h3>
-            <span class="subsection-note">Bấm vào từng rủi ro để xem biện pháp kiểm soát của hệ thống</span>
-          </div>
-
+        <!-- 2.5 Bảng "Rủi ro và cách giảm thiểu" dạng Accordion (5 rủi ro) -->
+        <div class="subsection reveal">
+          <h3 class="subsection-title">Nhận diện rủi ro và giải pháp giảm thiểu (Bấm để mở rộng)</h3>
           <div class="accordion-group" id="risk-accordion">
-            
-            <!-- Rủi ro 1 -->
+            <!-- Rủi ro 1 (Mở sẵn để hội đồng thấy ngay nguyên tắc cốt lõi) -->
             <div class="accordion-item">
-              <h4 class="accordion-header">
-                <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="risk-body-1" id="risk-btn-1">
-                  <span>1. Rủi ro sinh viên lạm dụng AI để làm hộ bài tập</span>
-                  <span class="accordion-icon" aria-hidden="true">−</span>
-                </button>
-              </h4>
-              <div class="accordion-content" id="risk-body-1" role="region" aria-labelledby="risk-btn-1">
-                <p><strong>Cách giảm thiểu:</strong> Hệ thống được thiết kế khóa chặt phần lời giải chi tiết ở bước đầu. Khi bấm "Bí hướng giải", AI chỉ đưa ra gợi ý từng nấc. Sinh viên bắt buộc phải tự gõ bài làm có độ dài và nội dung tối thiểu thì tính năng nhận xét và tham khảo mới mở khóa.</p>
+              <button type="button" class="accordion-header" aria-expanded="true" aria-controls="risk-body-1" id="risk-head-1">
+                <span class="risk-title">⚠️ Rủi ro 1: Sinh viên lạm dụng AI để làm hộ bài hoặc chép lời giải mẫu</span>
+                <span class="accordion-icon" aria-hidden="true">−</span>
+              </button>
+              <div id="risk-body-1" class="accordion-body" role="region" aria-labelledby="risk-head-1">
+                <p><strong>Cách giảm thiểu từ thiết kế sản phẩm:</strong></p>
+                <ul class="check-list">
+                  <li><strong>Cơ chế gợi ý theo mức:</strong> AI không đưa đáp án ngay mà dẫn dắt qua 3 mức gợi ý từ nhẹ đến chi tiết để sinh viên tự suy nghĩ trước.</li>
+                  <li><strong>Lời giải mẫu chỉ mở có điều kiện:</strong> Nút xem lời giải mẫu bị khóa ban đầu; chỉ mở sau khi sinh viên đã tự nhập bài làm thử nghiệm hoặc đã dùng hết 3 mức gợi ý và xác nhận đã nỗ lực.</li>
+                  <li><strong>Luôn kèm giải thích từng bước:</strong> Lời giải mẫu chia nhỏ từng bước, tách bạch <em>"Làm gì"</em> và <em>"Vì sao làm vậy"</em> để sinh viên học phương pháp tư duy thay vì chép máy móc.</li>
+                  <li><strong>Theo dõi chỉ số tự giải:</strong> Hệ thống ghi nhận số lần xem lời giải mẫu so với số bài tự nộp để sinh viên và giảng viên theo dõi năng lực tự giải thực tế.</li>
+                </ul>
               </div>
             </div>
 
             <!-- Rủi ro 2 -->
             <div class="accordion-item">
-              <h4 class="accordion-header">
-                <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="risk-body-2" id="risk-btn-2">
-                  <span>2. Rủi ro sinh viên phụ thuộc vào khung gợi ý, giảm tư duy độc lập</span>
-                  <span class="accordion-icon" aria-hidden="true">+</span>
-                </button>
-              </h4>
-              <div class="accordion-content" id="risk-body-2" role="region" aria-labelledby="risk-btn-2" hidden>
-                <p><strong>Cách giảm thiểu:</strong> Áp dụng cơ chế "giàn giáo" (Scaffolding) — ở các bài luyện tập sau, khi sinh viên đã quen cấu trúc, hệ thống có chế độ ẩn bớt checklist ban đầu để sinh viên tự nhớ quy trình trình bày trước khi bấm kiểm tra.</p>
+              <button type="button" class="accordion-header" aria-expanded="false" aria-controls="risk-body-2" id="risk-head-2">
+                <span class="risk-title">⚠️ Rủi ro 2: Sinh viên phụ thuộc vào khung gợi ý, giảm tính sáng tạo</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </button>
+              <div id="risk-body-2" class="accordion-body" role="region" aria-labelledby="risk-head-2" hidden>
+                <p><strong>Cách giảm thiểu:</strong> Khung trình bày chỉ đóng vai trò danh mục kiểm tra (checklist) các phần cốt lõi không được thiếu (như căn cứ, bước biến đổi, kết luận). Hệ thống giữ nguyên cách diễn đạt và hướng giải riêng của sinh viên, đồng thời giảm dần gợi ý khi hồ sơ ghi nhận sinh viên đã thành thạo bố cục.</p>
               </div>
             </div>
 
             <!-- Rủi ro 3 -->
             <div class="accordion-item">
-              <h4 class="accordion-header">
-                <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="risk-body-3" id="risk-btn-3">
-                  <span>3. Rủi ro AI đánh giá sai hoặc nhận xét thiếu chính xác chuyên môn</span>
-                  <span class="accordion-icon" aria-hidden="true">+</span>
-                </button>
-              </h4>
-              <div class="accordion-content" id="risk-body-3" role="region" aria-labelledby="risk-btn-3" hidden>
-                <p><strong>Cách giảm thiểu:</strong> AI chỉ đối chiếu dựa trên bộ Khung trình bày và tiêu chí đã được giảng viên rà soát; giao diện luôn hiển thị "Mức độ tin cậy", kèm cảnh báo rõ ràng rằng kết quả chỉ mang tính tham khảo và có nút báo lỗi phản hồi để cải thiện.</p>
+              <button type="button" class="accordion-header" aria-expanded="false" aria-controls="risk-body-3" id="risk-head-3">
+                <span class="risk-title">⚠️ Rủi ro 3: AI đánh giá sai hoặc nhận xét chưa sát với ý đồ bài làm</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </button>
+              <div id="risk-body-3" class="accordion-body" role="region" aria-labelledby="risk-head-3" hidden>
+                <p><strong>Cách giảm thiểu:</strong> Mọi phản hồi đều hiển thị kèm <strong>Mức độ tin cậy</strong>, nêu rõ lý do vì sao hệ thống cho rằng bài làm đang thiếu mục đó, và luôn gắn cảnh báo rõ ràng: <em>"Điểm chỉ là ước lượng tham khảo, giảng viên quyết định điểm cuối cùng."</em></p>
               </div>
             </div>
 
             <!-- Rủi ro 4 -->
             <div class="accordion-item">
-              <h4 class="accordion-header">
-                <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="risk-body-4" id="risk-btn-4">
-                  <span>4. Rủi ro khung trình bày chung chưa khớp với yêu cầu riêng của từng môn học</span>
-                  <span class="accordion-icon" aria-hidden="true">+</span>
-                </button>
-              </h4>
-              <div class="accordion-content" id="risk-body-4" role="region" aria-labelledby="risk-btn-4" hidden>
-                <p><strong>Cách giảm thiểu:</strong> Ở Bước 1 (Thiết lập đầu vào), hệ thống cho phép sinh viên hoặc giảng viên tùy chỉnh, bật/tắt các tiêu chí chấm riêng của học phần để khung trình bày linh hoạt theo đúng yêu cầu trên lớp.</p>
+              <button type="button" class="accordion-header" aria-expanded="false" aria-controls="risk-body-4" id="risk-head-4">
+                <span class="risk-title">⚠️ Rủi ro 4: Khung trình bày mặc định chưa khớp với yêu cầu đặc thù của môn học</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </button>
+              <div id="risk-body-4" class="accordion-body" role="region" aria-labelledby="risk-head-4" hidden>
+                <p><strong>Cách giảm thiểu:</strong> Thư viện khung được thiết kế mở để giảng viên rà soát, chỉnh sửa trước khi áp dụng; đồng thời ở Bước 1, sinh viên có thể nhập thêm tiêu chí chấm riêng của giảng viên bộ môn.</p>
               </div>
             </div>
 
             <!-- Rủi ro 5 -->
             <div class="accordion-item">
-              <h4 class="accordion-header">
-                <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="risk-body-5" id="risk-btn-5">
-                  <span>5. Rủi ro lộ dữ liệu cá nhân và bài làm của người học</span>
-                  <span class="accordion-icon" aria-hidden="true">+</span>
-                </button>
-              </h4>
-              <div class="accordion-content" id="risk-body-5" role="region" aria-labelledby="risk-btn-5" hidden>
-                <p><strong>Cách giảm thiểu:</strong> Không yêu cầu cung cấp thông tin định danh nhạy cảm khi dùng thử; hồ sơ lỗi chỉ lưu trên trình duyệt của người dùng khi có sự đồng ý (Opt-in) và trang bị nút "Xóa toàn bộ dữ liệu" ngay lập tức chỉ với 1 cú nhấp chuột.</p>
+              <button type="button" class="accordion-header" aria-expanded="false" aria-controls="risk-body-5" id="risk-head-5">
+                <span class="risk-title">⚠️ Rủi ro 5: Nguy cơ lộ dữ liệu cá nhân hoặc bài làm của sinh viên</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </button>
+              <div id="risk-body-5" class="accordion-body" role="region" aria-labelledby="risk-head-5" hidden>
+                <p><strong>Cách giảm thiểu:</strong> Không bắt buộc đăng nhập thông tin nhạy cảm; lịch sử lỗi chỉ lưu khi sinh viên chủ động tích chọn đồng ý (Opt-in) và có nút xóa toàn bộ dữ liệu bất cứ lúc nào.</p>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ==================== MỤC 3: TÍNH SÁNG TẠO & ĐIỂM KHÁC BIỆT ==================== -->
+    <!-- ===================================================================
+         MỤC 3: TÍNH SÁNG TẠO VÀ ĐIỂM KHÁC BIỆT
+         =================================================================== -->
     <section id="khac-biet" class="section-padding bg-alt">
       <div class="container">
-        
-        <div class="section-header reveal-item">
-          <span class="section-eyebrow">Mục 3 • Giá trị cốt lõi</span>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Mục 3 • Giá trị cốt lõi &amp; So sánh</span>
           <h2 class="section-title">Tính sáng tạo và điểm khác biệt</h2>
           <p class="section-lead">
-            Chuyển dịch vai trò của AI từ “cỗ máy giải bài thuê” thành “người bạn đồng hành rèn phương pháp trình bày học thuật”.
+            Thay vì biến AI thành "máy giải bài hộ", dự án định vị AI là <strong>người hướng dẫn phương pháp</strong> ở cả hai khâu: tìm hướng giải và chuẩn hóa cách trình bày.
           </p>
         </div>
 
-        <!-- 3.1. 5 thẻ điểm khác biệt có icon -->
-        <div class="diff-cards-grid reveal-item">
+        <!-- 3.1 Năm thẻ điểm khác biệt có icon -->
+        <div class="diff-cards-grid subsection reveal">
           <article class="diff-card">
-            <div class="diff-icon" aria-hidden="true">🎯</div>
+            <div class="diff-icon" aria-hidden="true">🔗</div>
             <h3>1. Vừa giải vừa trình bày</h3>
-            <p>Hỗ trợ đồng thời cả tư duy tìm hướng giải lẫn kỹ năng viết lời giải mạch lạc, đúng chuẩn chấm thi tự luận.</p>
+            <p>Hỗ trợ trọn vẹn cả 2 khâu của bài tự luận: giúp tìm hướng giải khi bí và chuẩn hóa cách trình bày để không mất điểm oan.</p>
           </article>
 
           <article class="diff-card">
             <div class="diff-icon" aria-hidden="true">🪜</div>
-            <h3>2. Gợi ý theo từng mức</h3>
-            <p>Chia nhỏ gợi ý thành 3 tầng từ khơi gợi kiến thức đến hướng dẫn bước đi, kích thích sinh viên tự suy nghĩ.</p>
+            <h3>2. Gợi ý theo từng mức, có lời giải mẫu khi cần</h3>
+            <p>Dẫn dắt 3 mức từ nhẹ đến sâu; lời giải mẫu chỉ mở có điều kiện sau khi sinh viên đã nỗ lực và luôn giải thích rõ "vì sao làm vậy".</p>
           </article>
 
           <article class="diff-card">
-            <div class="diff-icon" aria-hidden="true">🗂️</div>
+            <div class="diff-icon" aria-hidden="true">📐</div>
             <h3>3. Khung riêng từng dạng bài, ngành</h3>
-            <p>Không dùng một khuôn mẫu chung; bài tính toán, code thuật toán hay xử lý tình huống đều có checklist riêng.</p>
+            <p>Không dùng một kiểu trả lời chung chung mà áp dụng checklist bố cục riêng cho bài tính toán, tình huống du lịch, lý thuyết hay thuật toán.</p>
           </article>
 
           <article class="diff-card">
-            <div class="diff-icon" aria-hidden="true">🔍</div>
-            <h3>4. Nhận xét có lý do và gợi ý sửa</h3>
-            <p>Chỉ rõ bài làm thiếu mục nào, vì sao mục đó quan trọng và gợi ý cách bổ sung ngay trên bài viết của sinh viên.</p>
+            <div class="diff-icon" aria-hidden="true">✍️</div>
+            <h3>4. Nhận xét có lý do &amp; gợi ý sửa</h3>
+            <p>Chỉ rõ bài thiếu mục nào, vì sao cần mục đó và gợi ý sắp xếp lại chính bài làm của sinh viên vào khung chuẩn mà không đổi ý gốc.</p>
           </article>
 
           <article class="diff-card">
-            <div class="diff-icon" aria-hidden="true">📈</div>
+            <div class="diff-icon" aria-hidden="true">🎯</div>
             <h3>5. Cá nhân hóa theo lỗi lặp lại</h3>
-            <p>Ghi nhớ "điểm mù trình bày" của từng cá nhân qua nhiều bài để nhắc nhở đúng chỗ hay quên nhất.</p>
+            <p>Ghi nhớ các lỗi trình bày sinh viên hay mắc qua nhiều bài làm và theo dõi tỷ lệ tự giải để đề xuất bài luyện tập đúng chỗ hổng.</p>
           </article>
         </div>
 
-        <!-- 3.2. Bảng so sánh 3 cột với 7 tiêu chí -->
-        <div class="subsection reveal-item">
-          <h3 class="subsection-title">Bảng đối sánh với các phương thức hiện tại</h3>
+        <!-- 3.2 Bảng so sánh 3 cột với 7 tiêu chí (Làm nổi bật cột Giải pháp của chúng tôi) -->
+        <div class="subsection reveal">
+          <h3 class="subsection-title">Bảng so sánh với các cách tiếp cận hiện tại</h3>
           <div class="table-responsive">
             <table class="data-table comparison-table">
               <thead>
                 <tr>
                   <th scope="col">Tiêu chí so sánh</th>
-                  <th scope="col">Chatbot AI thông thường</th>
+                  <th scope="col">Chatbot thông thường</th>
                   <th scope="col">Nhờ giảng viên / bạn bè góp ý</th>
                   <th scope="col" class="col-featured">🌟 Giải pháp của chúng tôi</th>
                 </tr>
@@ -792,699 +817,708 @@
               <tbody>
                 <tr>
                   <td><strong>1. Mục đích chính</strong></td>
-                  <td>Trả lời nhanh câu hỏi của người dùng.</td>
-                  <td>Hỗ trợ giải đáp thắc mắc và sửa bài thủ công.</td>
-                  <td class="col-featured"><strong>Rèn phương pháp tự giải & chuẩn hóa trình bày tự luận.</strong></td>
+                  <td>Đưa câu trả lời nhanh cho câu hỏi bất kỳ.</td>
+                  <td>Giải đáp thắc mắc và sửa bài trực tiếp khi có thời gian.</td>
+                  <td class="col-featured"><strong>Dẫn dắt hướng giải và hướng dẫn trình bày lời giải của chính sinh viên.</strong></td>
                 </tr>
                 <tr>
                   <td><strong>2. Cách giải bài</strong></td>
-                  <td>Đưa ngay lời giải hoàn chỉnh từ đầu đến cuối.</td>
-                  <td>Gợi ý hướng làm hoặc chỉ chỗ sai.</td>
-                  <td class="col-featured"><strong>Gợi ý từng mức (3 cấp độ), khóa đáp án đến khi SV nộp bài.</strong></td>
+                  <td>Đưa ngay toàn bộ đáp án hoàn chỉnh từ đầu.</td>
+                  <td>Hướng dẫn tùy theo thời gian và cách giải thích của từng người.</td>
+                  <td class="col-featured"><strong>Gợi ý theo 3 mức để SV tự giải; có lời giải mẫu từng bước (kèm giải thích) mở sau khi đã thử.</strong></td>
                 </tr>
                 <tr>
                   <td><strong>3. Hướng dẫn trình bày</strong></td>
-                  <td>Viết thay sinh viên, không có checklist đối chiếu.</td>
-                  <td>Có nhắc nhở nhưng khó chi tiết hết từng mục nhỏ.</td>
-                  <td class="col-featured"><strong>Cung cấp Khung trình bày (Checklist) và giữ nguyên ý đúng của SV.</strong></td>
+                  <td>Ít chú trọng khung trình bày chuẩn của môn học.</td>
+                  <td>Có, nhưng khó chi tiết cho từng bài luyện tập vì lớp đông.</td>
+                  <td class="col-featured"><strong>Có, đối chiếu và sắp xếp theo khung riêng của từng dạng bài.</strong></td>
                 </tr>
                 <tr>
                   <td><strong>4. Tốc độ phản hồi</strong></td>
-                  <td>Tức thì (24/7).</td>
-                  <td>Chậm, phụ thuộc vào thời gian rảnh của GV/bạn bè.</td>
-                  <td class="col-featured"><strong>Tức thì (24/7) ngay khi sinh viên cần luyện tập.</strong></td>
+                  <td>Nhanh, tức thì.</td>
+                  <td>Phụ thuộc lịch rảnh của giảng viên hoặc bạn bè.</td>
+                  <td class="col-featured"><strong>Nhanh, đồng hành mọi lúc 24/7.</strong></td>
                 </tr>
                 <tr>
                   <td><strong>5. Bám tiêu chí môn học</strong></td>
-                  <td>Thấp (trả lời chung chung theo dữ liệu mạng).</td>
-                  <td>Rất cao (sát thực tế giảng dạy trên lớp).</td>
-                  <td class="col-featured"><strong>Cao (dựa trên thư viện khung được giảng viên rà soát).</strong></td>
+                  <td>Chung chung, dễ lệch cấu trúc giảng viên yêu cầu.</td>
+                  <td>Rất sát (nếu hỏi trực tiếp giảng viên bộ môn).</td>
+                  <td class="col-featured"><strong>Có, bám sát theo khung trình bày chuẩn và tiêu chí chấm đầu vào.</strong></td>
                 </tr>
                 <tr>
                   <td><strong>6. Theo dõi lỗi lặp lại</strong></td>
-                  <td>Không thống kê lỗi trình bày qua các phiên chat.</td>
-                  <td>Khó nhớ hết lỗi riêng của từng sinh viên trong lớp đông.</td>
-                  <td class="col-featured"><strong>Tự động lưu "Hồ sơ lỗi cá nhân" và gợi ý bài luyện tập.</strong></td>
+                  <td>Không thống kê các lỗi trình bày qua nhiều bài.</td>
+                  <td>Khó nhớ hết lịch sử lỗi của từng sinh viên trong lớp.</td>
+                  <td class="col-featured"><strong>Có, lưu thống kê theo lịch sử bài làm và tỷ lệ xem lời giải mẫu.</strong></td>
                 </tr>
                 <tr>
                   <td><strong>7. Nguy cơ làm hộ bài</strong></td>
-                  <td><span class="badge badge-danger">Rất cao</span> (sinh viên dễ copy-paste).</td>
-                  <td><span class="badge badge-success">Thấp</span> (thường chỉ hướng dẫn).</td>
-                  <td class="col-featured"><span class="badge badge-success">Được kiểm soát chặt</span> <strong>nhờ cơ chế chặn giải hộ.</strong></td>
+                  <td><span class="consequence-tag">Rất cao (sinh viên dễ sao chép nguyên văn).</span></td>
+                  <td>Thấp.</td>
+                  <td class="col-featured"><strong>Hạn chế từ thiết kế (lời giải mẫu mở có điều kiện, giữ nguyên ý SV, có theo dõi).</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 3.3. 2 Ví dụ minh họa dạng Trước / AI phản hồi / Sau (Có Tab chuyển đổi) -->
-        <div class="subsection reveal-item">
-          <div class="subsection-title-wrap">
-            <h3 class="subsection-title">Ví dụ minh họa luồng cải thiện bài làm: Trước → AI phản hồi → Sau</h3>
-            <span class="badge badge-warning">⚠️ Lưu ý: Đây là tình huống mô phỏng, chưa phải kết quả thử nghiệm thực tế.</span>
+        <!-- 3.3 Hai ví dụ minh họa "Trước / AI phản hồi / Sau" (Có Tab chuyển ngành Du lịch & CNTT) -->
+        <div class="subsection reveal">
+          <div class="flex-between-header">
+            <h3 class="subsection-title">Ví dụ minh họa: Trước khi dùng — AI phản hồi — Sau khi hoàn thiện</h3>
+            <span class="note-pill">ℹ️ Đây là tình huống mô phỏng, chưa phải kết quả thử nghiệm.</span>
           </div>
 
-          <!-- Nút chuyển Tab Ví dụ -->
-          <div class="example-tabs-nav" role="tablist" aria-label="Chọn ngành học minh họa">
-            <button type="button" class="example-tab-btn active" role="tab" aria-selected="true" aria-controls="ex-panel-cntt" id="ex-tab-cntt" data-target="ex-panel-cntt">
-              💻 Ví dụ Ngành CNTT (Giải bài toán thuật toán)
+          <!-- Nút chuyển Tab ngành -->
+          <div class="example-tabs" role="tablist" aria-label="Ví dụ minh họa theo ngành học">
+            <button type="button" class="example-tab-btn active" role="tab" aria-selected="true" aria-controls="ex-panel-dulich" id="ex-tab-dulich" data-example="dulich">
+              🧳 Ngành Du lịch: Xử lý khách phàn nàn
             </button>
-            <button type="button" class="example-tab-btn" role="tab" aria-selected="false" aria-controls="ex-panel-dulich" id="ex-tab-dulich" data-target="ex-panel-dulich">
-              🏨 Ví dụ Ngành Du lịch (Xử lý tình huống khách phàn nàn)
+            <button type="button" class="example-tab-btn" role="tab" aria-selected="false" aria-controls="ex-panel-cntt" id="ex-tab-cntt" data-example="cntt">
+              💻 Ngành CNTT: Giải bài toán thuật toán
             </button>
           </div>
 
-          <!-- Nội dung Tab 1: Ngành CNTT -->
-          <div class="example-panel active" id="ex-panel-cntt" role="tabpanel" aria-labelledby="ex-tab-cntt">
-            <div class="example-topic-bar">
-              <strong>Đề bài mô phỏng (CNTT):</strong> Cho mảng số nguyên $A$ gồm $n$ phần tử và số nguyên dương $k$. Hãy trình bày thuật toán tìm tổng lớn nhất của một dãy con liên tiếp có độ dài bằng $k$.
-            </div>
+          <!-- Tab Panel 1: Ngành Du lịch -->
+          <div id="ex-panel-dulich" class="example-panel active" role="tabpanel" aria-labelledby="ex-tab-dulich">
             <div class="before-after-grid">
-              <!-- Cột 1: Trước -->
               <div class="ba-card ba-before">
-                <div class="ba-header">1. Bài làm ban đầu của SV (TRƯỚC)</div>
-                <div class="ba-body">
-                  <p>“Dùng vòng lặp tính tổng $k$ phần tử đầu tiên. Sau đó chạy vòng lặp từ $i = k$ đến $n - 1$, mỗi bước cộng thêm $A[i]$ và trừ đi $A[i-k]$, cập nhật `max_sum`. Trả về `max_sum`.”</p>
-                  <div class="ba-tag-list">
-                    <span class="tag-missing">✗ Thiếu điều kiện biên ($n < k$)</span>
-                    <span class="tag-missing">✗ Chưa nêu tên/căn cứ kỹ thuật</span>
-                    <span class="tag-missing">✗ Quên đánh giá độ phức tạp</span>
-                  </div>
+                <div class="ba-badge">1. Trước (Bài làm gốc của SV)</div>
+                <p class="ba-prompt"><strong>Đề:</strong> Đoàn khách phàn nàn phòng khách sạn nhận muộn 2 tiếng so với giờ quy định. Là hướng dẫn viên/quản lý, bạn xử lý thế nào?</p>
+                <div class="ba-content">
+                  “Em sẽ xin lỗi khách ngay lập tức, mời khách uống nước miễn phí ở sảnh rồi giục bộ phận buồng phòng dọn nhanh lên. Nếu khách vẫn tức giận thì tặng thêm voucher ăn sáng để khách vui vẻ bỏ qua.”
                 </div>
+                <div class="ba-issue">❌ <strong>Vấn đề:</strong> Có ý xử lý đúng nhưng viết gộp 1 đoạn cảm tính, thiếu phân tích nguyên nhân, thiếu quy trình chuẩn (LAST) và không có giải pháp phòng ngừa lặp lại.</div>
               </div>
 
-              <!-- Cột 2: AI Phản hồi -->
               <div class="ba-card ba-ai">
-                <div class="ba-header">2. Phản hồi từ AI Đồng Hành</div>
-                <div class="ba-body">
-                  <p><strong>✓ Ghi nhận:</strong> Ý tưởng dịch chuyển cửa sổ (cộng phần tử mới, trừ phần tử cũ) của bạn hoàn toàn chính xác!</p>
-                  <p><strong>! Cần bổ sung theo khung bài Thuật toán:</strong></p>
-                  <ul>
-                    <li>Nêu rõ tên kỹ thuật áp dụng (Kỹ thuật Cửa sổ trượt - Sliding Window).</li>
-                    <li>Xét trường hợp ngoại lệ khi kích thước mảng $n < k$.</li>
-                    <li>Bổ sung kết luận về độ phức tạp thời gian $O(n)$ và không gian $O(1)$.</li>
-                  </ul>
-                </div>
+                <div class="ba-badge">2. AI Đồng hành &amp; Phản hồi</div>
+                <ul class="compact-ul">
+                  <li><strong>Ghi nhận:</strong> Bạn đã nêu được thái độ xin lỗi, đền bù tại chỗ (nước uống, voucher) và phối hợp bộ phận buồng phòng.</li>
+                  <li><strong>Cảnh báo thiếu khung:</strong> Bài làm đang thiếu <em>(1) Tóm tắt mức độ ảnh hưởng</em>, <em>(2) Xác minh nguyên nhân</em> và <em>(3) Biện pháp phòng ngừa quản trị</em>.</li>
+                  <li><strong>Gợi ý cấu trúc lại:</strong> Giữ nguyên giải pháp mời nước và tặng voucher của bạn, nhưng tách thành 4 mục rõ ràng theo quy trình xử lý sự cố dịch vụ.</li>
+                </ul>
               </div>
 
-              <!-- Cột 3: Sau -->
               <div class="ba-card ba-after">
-                <div class="ba-header">3. Bài sinh viên tự hoàn thiện (SAU)</div>
-                <div class="ba-body">
-                  <p>“<strong>1. Kiểm tra biên:</strong> Nếu $n < k$ thì thông báo dữ liệu không hợp lệ.<br>
-                  <strong>2. Ý tưởng (Sliding Window):</strong> Tính tổng cửa sổ đầu tiên gồm $k$ phần tử. Trượt cửa sổ từ vị trí $k$ đến $n-1$ theo công thức `window_sum += A[i] - A[i-k]` và cập nhật `max_sum`.<br>
-                  <strong>3. Kết luận:</strong> Thuật toán trả về `max_sum` với độ phức tạp thời gian $O(n)$ và bộ nhớ phụ $O(1)$.”</p>
-                  <div class="ba-tag-list">
-                    <span class="tag-ok">✓ Đủ 5/5 mục theo khung chấm</span>
-                  </div>
+                <div class="ba-badge">3. Sau (Bài trình bày lại theo khung)</div>
+                <div class="ba-content structured-text">
+                  <p><strong>1. Tiếp nhận &amp; Đồng cảm:</strong> Lắng nghe và xin lỗi khách ngay tại sảnh, mời đoàn dùng nước miễn phí tại khu vực chờ để hạ nhiệt căng thẳng.</p>
+                  <p><strong>2. Xác minh &amp; Xử lý tức thời:</strong> Làm việc trực tiếp với bộ phận Buồng phòng/Lễ tân để kiểm tra nguyên nhân chậm trễ, ưu tiên bàn giao trước các phòng đã xong cho người già/trẻ nhỏ.</p>
+                  <p><strong>3. Đền bù thiện chí:</strong> Tặng voucher dịch vụ/ăn sáng và thông báo mốc giờ nhận phòng chính xác.</p>
+                  <p><strong>4. Phòng ngừa &amp; Kết luận:</strong> Rà soát lại quy trình phối hợp Check-out/Check-in giờ cao điểm để không tái diễn sự cố, giữ uy tín thương hiệu.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Nội dung Tab 2: Ngành Du lịch -->
-          <div class="example-panel" id="ex-panel-dulich" role="tabpanel" aria-labelledby="ex-tab-dulich" hidden>
-            <div class="example-topic-bar">
-              <strong>Đề bài mô phỏng (Quản trị Du lịch & Khách sạn):</strong> Khách đoàn nhận phòng lúc 14h00 nhưng phòng chưa dọn xong do ca trước trả muộn, khách tỏ thái độ bức xúc tại sảnh. Hãy trình bày quy trình xử lý.
-            </div>
+          <!-- Tab Panel 2: Ngành CNTT -->
+          <div id="ex-panel-cntt" class="example-panel" role="tabpanel" aria-labelledby="ex-tab-cntt" hidden>
             <div class="before-after-grid">
-              <!-- Cột 1: Trước -->
               <div class="ba-card ba-before">
-                <div class="ba-header">1. Bài làm ban đầu của SV (TRƯỚC)</div>
-                <div class="ba-body">
-                  <p>“Lễ tân xin lỗi khách vì sự cố phòng chưa xong, mời khách ngồi uống nước đợi ở sảnh rồi gọi bộ phận buồng phòng làm nhanh lên để giao phòng cho khách.”</p>
-                  <div class="ba-tag-list">
-                    <span class="tag-missing">✗ Thiếu xác định nguyên tắc nghiệp vụ</span>
-                    <span class="tag-missing">✗ Chưa đưa phương án thay thế/đền bù</span>
-                    <span class="tag-missing">✗ Thiếu bước kiểm tra lại & phòng ngừa</span>
-                  </div>
+                <div class="ba-badge">1. Trước (Bài làm gốc của SV)</div>
+                <p class="ba-prompt"><strong>Đề:</strong> Cho mảng số nguyên A gồm n phần tử. Trình bày thuật toán tìm phần tử lớn nhất trong mảng.</p>
+                <div class="ba-content">
+                  <code>max = A[0]; for(int i=1; i&lt;n; i++) if(A[i] &gt; max) max = A[i]; return max;</code>
                 </div>
+                <div class="ba-issue">❌ <strong>Vấn đề:</strong> Chỉ viết mỗi đoạn code ngắn ngủi. Trong bài thi tự luận CNTT, cách làm này bị trừ điểm vì thiếu đặc tả Input/Output, thiếu giải thích ý tưởng và không đánh giá độ phức tạp thuật toán.</div>
               </div>
 
-              <!-- Cột 2: AI Phản hồi -->
               <div class="ba-card ba-ai">
-                <div class="ba-header">2. Phản hồi từ AI Đồng Hành</div>
-                <div class="ba-body">
-                  <p><strong>✓ Ghi nhận:</strong> Bạn đã nắm được bước cơ bản là xin lỗi, mời nước và thúc đẩy bộ phận buồng phòng.</p>
-                  <p><strong>! Cần bổ sung theo khung Phân tích tình huống:</strong></p>
-                  <ul>
-                    <li>Sắp xếp theo mô hình nghiệp vụ (ví dụ quy tắc LAST: Listen - Apologize - Solve - Thank).</li>
-                    <li>Cần nêu mốc thời gian chờ cụ thể và phương án đổi phòng tương đương/nâng hạng nếu có.</li>
-                    <li>Bổ sung bước hỏi thăm sau khi khách nhận phòng và rút kinh nghiệm điều phối.</li>
-                  </ul>
-                </div>
+                <div class="ba-badge">2. AI Đồng hành &amp; Phản hồi</div>
+                <ul class="compact-ul">
+                  <li><strong>Ghi nhận:</strong> Vòng lặp <code>for</code> và phép gán <code>max = A[0]</code> của bạn hoàn toàn chính xác.</li>
+                  <li><strong>Cảnh báo thiếu khung:</strong> Thiếu 3 phần bắt buộc của bài tự luận thuật toán: <em>Đặc tả bài toán (Input/Output)</em>, <em>Trình bày ý tưởng từng bước</em>, và <em>Độ phức tạp O(n)</em>.</li>
+                  <li><strong>Gợi ý cấu trúc lại:</strong> Giữ nguyên đoạn code của bạn ở mục cài đặt, bổ sung khung dẫn dắt và kết luận độ phức tạp.</li>
+                </ul>
               </div>
 
-              <!-- Cột 3: Sau -->
               <div class="ba-card ba-after">
-                <div class="ba-header">3. Bài sinh viên tự hoàn thiện (SAU)</div>
-                <div class="ba-body">
-                  <p>“Áp dụng quy trình xử lý phàn nàn <strong>LAST</strong>:<br>
-                  <strong>1. Lắng nghe & Xin lỗi:</strong> Lắng nghe, đồng cảm và xin lỗi chân thành, mời đoàn ra khu vực riêng dùng Welcome Drink.<br>
-                  <strong>2. Giải quyết:</strong> Kiểm tra hệ thống để đổi sang phòng trống cùng hạng (hoặc nâng hạng miễn phí cho trưởng đoàn); báo chính xác thời gian chờ (15 phút) và hỗ trợ gửi hành lý.<br>
-                  <strong>3. Cảm ơn & Kết luận:</strong> Gửi thư cảm ơn/quà nhỏ lên phòng, đồng thời rà soát quy trình phối hợp Lễ tân - Buồng phòng giờ cao điểm.”</p>
-                  <div class="ba-tag-list">
-                    <span class="tag-ok">✓ Đầy đủ cơ sở nghiệp vụ & kết luận</span>
-                  </div>
+                <div class="ba-badge">3. Sau (Bài trình bày lại theo khung)</div>
+                <div class="ba-content structured-text">
+                  <p><strong>1. Input / Output:</strong> Input: Mảng A có n số nguyên (n ≥ 1). Output: Giá trị lớn nhất <code>max</code> trong mảng.</p>
+                  <p><strong>2. Ý tưởng thuật toán:</strong> Khởi tạo <code>max = A[0]</code>. Duyệt tuần tự từ phần tử thứ 2 (chỉ số 1) đến hết mảng, nếu gặp <code>A[i]</code> lớn hơn <code>max</code> thì cập nhật lại <code>max = A[i]</code>.</p>
+                  <p><strong>3. Cài đặt thuật toán:</strong> Giữ nguyên đoạn mã nguồn vòng lặp <code>for</code> của sinh viên.</p>
+                  <p><strong>4. Độ phức tạp &amp; Kết luận:</strong> Duyệt qua mảng 1 lần nên độ phức tạp thời gian là O(n), không gian phụ O(1). Thuật toán tối ưu cho mảng chưa sắp xếp.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 3.4. Khối Nguyên tắc "Đồng hành, không làm hộ" -->
-        <div class="principle-banner reveal-item">
-          <div class="principle-header">
-            <span class="principle-badge">Tuyên ngôn thiết kế sản phẩm</span>
-            <h3>Nguyên tắc cốt lõi: “ĐỒNG HÀNH, KHÔNG LÀM HỘ”</h3>
-          </div>
-          <div class="principle-grid">
-            <div class="principle-item">
-              <h4>1. Đồng hành từ đề bài đến bài làm</h4>
-              <p>Hỗ trợ xuyên suốt từ lúc đọc hiểu yêu cầu đề bài, lập dàn ý khung cho đến khi rà soát lại bài viết do chính tay sinh viên soạn thảo.</p>
+        <!-- 3.4 Khối "Nguyên tắc Đồng hành từng bước, làm mẫu có điều kiện" (4 ý cốt lõi) -->
+        <div class="principle-highlight-box reveal">
+          <h3 class="subsection-title">4 trụ cột của nguyên tắc “Đồng hành từng bước, làm mẫu có điều kiện”</h3>
+          <div class="four-pillars-grid">
+            <div class="pillar-card">
+              <span class="pillar-num">01</span>
+              <h4>Đồng hành từ đề bài đến bài làm</h4>
+              <p>Theo sát sinh viên từ lúc đọc hiểu yêu cầu đề, lên khung bố cục cho đến khi rà soát hoàn thiện câu chữ cuối cùng.</p>
             </div>
-            <div class="principle-item">
-              <h4>2. Gợi ý mở khóa theo từng mức</h4>
-              <p>Tuyệt đối không hiển thị ngay bài giải mẫu hoàn chỉnh. Sinh viên chỉ nhận gợi ý vừa đủ để tự vượt qua điểm nghẽn tư duy.</p>
+            <div class="pillar-card">
+              <span class="pillar-num">02</span>
+              <h4>Gợi ý theo 3 mức tăng dần</h4>
+              <p>Kích thích tư duy độc lập bằng cách mở dần gợi ý từ kiến thức nền → bước tiếp theo → phân tích hướng giải.</p>
             </div>
-            <div class="principle-item">
-              <h4>3. Luyện tập phương pháp thay vì chép đáp án</h4>
-              <p>Mục tiêu cuối cùng là giúp sinh viên hình thành phản xạ trình bày đủ bước ngay cả khi vào phòng thi thực tế không có thiết bị hỗ trợ.</p>
+            <div class="pillar-card">
+              <span class="pillar-num">03</span>
+              <h4>Lời giải mẫu có điều kiện &amp; giải thích</h4>
+              <p>Chỉ mở sau khi sinh viên đã tự thử; trình bày mẫu từng bước kèm lý do <em>“vì sao làm vậy”</em> để sinh viên học phương pháp.</p>
+            </div>
+            <div class="pillar-card">
+              <span class="pillar-num">04</span>
+              <h4>Luyện tập thay vì chép bài mẫu</h4>
+              <p>Ghi nhận lịch sử xem lời giải mẫu và yêu cầu sinh viên tự giải lại bài tương tự để chuyển hóa thành kỹ năng thật.</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ==================== MỤC 4: MỨC ĐỘ ỨNG DỤNG AI & GIÁ TRỊ TẠO RA ==================== -->
+    <!-- ===================================================================
+         MỤC 4: MỨC ĐỘ ỨNG DỤNG AI VÀ GIÁ TRỊ TẠO RA
+         =================================================================== -->
     <section id="gia-tri-ai" class="section-padding">
       <div class="container">
-        
-        <div class="section-header reveal-item">
-          <span class="section-eyebrow">Mục 4 • Công nghệ & Tác động</span>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Mục 4 • Công nghệ &amp; Tác động</span>
           <h2 class="section-title">Mức độ ứng dụng AI và giá trị tạo ra</h2>
         </div>
 
-        <!-- 4.1. Vì sao bắt buộc phải dùng AI -->
-        <div class="why-ai-box reveal-item">
+        <!-- 4.1 Đoạn "Vì sao bắt buộc phải dùng AI" -->
+        <div class="why-ai-banner reveal">
           <div class="why-ai-icon" aria-hidden="true">🧠</div>
-          <div class="why-ai-content">
-            <h3>Vì sao bài toán này bắt buộc phải ứng dụng AI?</h3>
+          <div>
+            <h3>Vì sao bài toán này bắt buộc phải dùng AI?</h3>
             <p>
-              Khác với bài trắc nghiệm chỉ cần so khớp đáp án A/B/C/D, <strong>bài tập tự luận là văn bản tự do</strong> với vô số cách diễn đạt, lập luận và thứ tự trình bày khác nhau. Một phần mềm lập trình theo quy tắc cứng (if-else hay đếm từ khóa đơn thuần) không thể đọc hiểu ngữ cảnh đề bài, không phân biệt được hai cách giải khác nhau nhưng cùng đúng, và càng không thể nhận ra một đoạn lập luận bị thiếu căn cứ để giải thích lại cho người học.
+              Bài tập tự luận là <strong>văn bản tự do (unstructured text)</strong>, mỗi sinh viên có một cách diễn đạt, lập luận và thứ tự trình bày khác nhau. Các phần mềm kiểm tra theo quy tắc cứng (if-else hay so khớp từ khóa đơn thuần) không thể hiểu ngữ cảnh đề bài, không nhận diện được mạch lập luận bị đứt gãy hay bước biến đổi ngầm, và càng không thể sắp xếp lại ý của sinh viên vào khung chuẩn mà vẫn bảo toàn văn phong gốc.
             </p>
           </div>
         </div>
 
-        <!-- 4.2. Bảng AI được dùng ở đâu (6 chức năng) -->
-        <div class="subsection reveal-item">
-          <h3 class="subsection-title">AI được ứng dụng ở đâu trong hệ thống? (6 chức năng cốt lõi)</h3>
+        <!-- 4.2 Bảng "AI được dùng ở đâu" (7 chức năng) -->
+        <div class="subsection reveal">
+          <h3 class="subsection-title">AI được ứng dụng ở đâu trong toàn bộ luồng sản phẩm? (7 chức năng)</h3>
           <div class="table-responsive">
             <table class="data-table">
               <thead>
                 <tr>
                   <th scope="col" class="col-stt">#</th>
-                  <th scope="col">Chức năng</th>
-                  <th scope="col">AI thực hiện công việc gì?</th>
-                  <th scope="col">Giá trị thực tế tạo ra</th>
+                  <th scope="col">Chức năng ứng dụng AI</th>
+                  <th scope="col">AI thực sự làm gì?</th>
+                  <th scope="col">Giá trị tạo ra cho người học</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">01</span></td>
+                  <td><span class="num-badge">1</span></td>
                   <td><strong>Gợi ý hướng giải</strong></td>
-                  <td>Phân tích đề bài và chia tách thành 3 cấp độ gợi ý tiệm cận dần (kiến thức nền → bước tiếp theo → hướng phân tích).</td>
-                  <td>Giúp sinh viên tự tháo gỡ bế tắc mà không bị phụ thuộc vào lời giải có sẵn.</td>
+                  <td>Phân tích yêu cầu đề bài và sinh 3 tầng gợi ý từ khái niệm đến hướng triển khai mà không lộ đáp số.</td>
+                  <td>Giúp sinh viên vượt qua trạng thái "bí ý tưởng" ban đầu và tự tìm ra lời giải.</td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">02</span></td>
+                  <td><span class="num-badge">2</span></td>
+                  <td><strong>Giải mẫu từng bước có giải thích</strong></td>
+                  <td>Khi đủ điều kiện mở khóa, trình bày lời giải chuẩn chia theo từng bước kèm giải thích <em>"Làm gì"</em> và <em>"Vì sao làm vậy"</em>.</td>
+                  <td>Giúp sinh viên hiểu bản chất phương pháp giải và cách trình bày chuẩn mực khi thực sự bế tắc.</td>
+                </tr>
+                <tr>
+                  <td><span class="num-badge">3</span></td>
                   <td><strong>Đề xuất khung trình bày</strong></td>
-                  <td>Nhận diện dạng câu hỏi để trích xuất và tinh chỉnh Checklist các phần bắt buộc phải trình bày.</td>
-                  <td>Định hình ngay bố cục chuẩn trước khi sinh viên đặt bút viết bài.</td>
+                  <td>Nhận diện dạng câu hỏi tự luận để ánh xạ với bộ khung bố cục chuẩn của môn học/ngành học.</td>
+                  <td>Định hình ngay danh mục các phần bắt buộc phải viết trước khi đặt bút làm bài.</td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">03</span></td>
-                  <td><strong>Đọc hiểu bài làm</strong></td>
-                  <td>Phân tích ngữ nghĩa bài tự luận tự do của sinh viên, nhận diện các ý đúng theo cách diễn đạt riêng của người học.</td>
-                  <td>Tôn trọng tư duy cá nhân, không ép sinh viên học thuộc lòng văn mẫu.</td>
+                  <td><span class="num-badge">4</span></td>
+                  <td><strong>Đọc hiểu bài làm tự do</strong></td>
+                  <td>Phân tích ngữ nghĩa bài nháp của sinh viên để tách các phần: dữ kiện, công thức, lập luận, kết quả.</td>
+                  <td>Hiểu được ý đúng của sinh viên dù cách hành văn còn lộn xộn hoặc viết tắt.</td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">04</span></td>
-                  <td><strong>Phát hiện thiếu sót</strong></td>
-                  <td>Đối chiếu từng phần trong bài làm với Khung trình bày để chỉ ra chính xác bước biến đổi, căn cứ hoặc kết luận bị bỏ quên.</td>
-                  <td>Ngăn chặn kịp thời 6 lỗi mất điểm trình bày phổ biến trước khi nộp bài.</td>
+                  <td><span class="num-badge">5</span></td>
+                  <td><strong>Phát hiện thiếu sót theo khung</strong></td>
+                  <td>Đối chiếu bài làm đã phân tích với khung chuẩn để chỉ điểm chính xác bước hoặc mục bị bỏ quên.</td>
+                  <td>Chặn sớm các lỗi làm mất điểm oan (quên công thức gốc, thiếu dẫn chứng, quên kết luận).</td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">05</span></td>
-                  <td><strong>Giải thích và gợi ý sửa</strong></td>
-                  <td>Giải thích rõ vì sao việc thiếu bước đó lại làm yếu lập luận và đưa ra gợi ý chỉnh sửa sát với nội dung bài đang viết.</td>
-                  <td>Sinh viên hiểu bản chất cách sửa thay vì chỉ biết đúng/sai chung chung.</td>
+                  <td><span class="num-badge">6</span></td>
+                  <td><strong>Giải thích, gợi ý sửa &amp; viết lại theo khung</strong></td>
+                  <td>Nêu lý do cần bổ sung và tái cấu trúc chính câu chữ của sinh viên vào đúng thứ tự các mục của khung.</td>
+                  <td>Sinh viên thấy trực quan bài của mình khi được trình bày chuẩn sẽ trông như thế nào mà không bị làm hộ.</td>
                 </tr>
                 <tr>
-                  <td class="col-stt"><span class="num-badge">06</span></td>
+                  <td><span class="num-badge">7</span></td>
                   <td><strong>Cá nhân hóa luyện tập</strong></td>
-                  <td>Tổng hợp tần suất các lỗi trình bày lặp lại qua nhiều bài để cảnh báo sớm và đề xuất bài tập rèn luyện đúng điểm yếu.</td>
-                  <td>Rút ngắn thời gian khắc phục thói quen trình bày thiếu sót dài hạn.</td>
+                  <td>Tổng hợp tần suất các lỗi trình bày lặp lại qua nhiều bài để gợi ý bài tập rèn luyện trúng điểm yếu.</td>
+                  <td>Hình thành phản xạ trình bày bài tự luận chặt chẽ, bền vững cho các kỳ thi thật.</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 4.3. 3 Thẻ giá trị & 4 Chỉ số đo giá trị -->
-        <div class="dual-grid-section">
-          
-          <!-- 3 Thẻ giá trị -->
-          <div class="subsection reveal-item">
-            <h3 class="subsection-title">Giá trị mang lại cho các bên</h3>
-            <div class="cards-stack">
-              <article class="info-card">
-                <div class="card-icon" aria-hidden="true">🎓</div>
-                <div class="card-body">
-                  <h4>Đối với Sinh viên</h4>
-                  <p>Biết cách bắt đầu khi gặp bài khó, tự rà soát để không mất điểm oan vì lỗi trình bày, và rèn được tư duy viết học thuật bài bản.</p>
-                </div>
-              </article>
+        <!-- 4.3 Ba thẻ giá trị (Sinh viên | Giảng viên | Nhà trường) -->
+        <div class="subsection reveal">
+          <h3 class="subsection-title">Giá trị mang lại cho các bên liên quan</h3>
+          <div class="three-col-grid">
+            <article class="value-card">
+              <div class="value-card-head">
+                <span class="value-icon" aria-hidden="true">🎓</span>
+                <h4>Đối với Sinh viên</h4>
+              </div>
+              <ul class="compact-ul">
+                <li>Không còn 막막 (bí hướng) khi bắt đầu làm bài tự luận.</li>
+                <li>Hiểu rõ vì sao mình hay bị trừ điểm trình bày và biết cách tự sửa.</li>
+                <li>Rèn tư duy giải bài độc lập nhờ cơ chế gợi ý 3 mức và lời giải mẫu có giải thích.</li>
+              </ul>
+            </article>
 
-              <article class="info-card">
-                <div class="card-icon" aria-hidden="true">🧑‍🏫</div>
-                <div class="card-body">
-                  <h4>Đối với Giảng viên</h4>
-                  <p>Giảm tải thời gian sửa các lỗi bố cục lặp đi lặp lại; nhận được những bài làm có cấu trúc rõ ràng hơn để tập trung góp ý chuyên môn sâu.</p>
-                </div>
-              </article>
+            <article class="value-card">
+              <div class="value-card-head">
+                <span class="value-icon" aria-hidden="true">👩‍🏫</span>
+                <h4>Đối với Giảng viên</h4>
+              </div>
+              <ul class="compact-ul">
+                <li>Giảm tải thời gian sửa các lỗi bố cục cơ bản lặp đi lặp lại ở lớp đông.</li>
+                <li>Bài nộp của sinh viên rõ ràng, đúng cấu trúc môn học, thuận lợi hơn khi chấm.</li>
+                <li>Có công cụ đồng hành cùng sinh viên ngoài giờ lên lớp theo đúng khung học thuật.</li>
+              </ul>
+            </article>
 
-              <article class="info-card">
-                <div class="card-icon" aria-hidden="true">🏛️</div>
-                <div class="card-body">
-                  <h4>Đối với Nhà trường</h4>
-                  <p>Thúc đẩy mô hình ứng dụng AI có đạo đức và trách nhiệm trong giáo dục, nâng cao chất lượng đầu ra ở các học phần tự luận.</p>
-                </div>
-              </article>
-            </div>
+            <article class="value-card">
+              <div class="value-card-head">
+                <span class="value-icon" aria-hidden="true">🏫</span>
+                <h4>Đối với Nhà trường</h4>
+              </div>
+              <ul class="compact-ul">
+                <li>Nâng cao chất lượng học thuật và kỹ năng viết/trình bày bài tự luận trên diện rộng.</li>
+                <li>Thúc đẩy mô hình ứng dụng AI có trách nhiệm, minh bạch, hạn chế gian lận học tập.</li>
+                <li>Dễ dàng mở rộng thư viện khung trình bày cho nhiều khoa và học phần khác nhau.</li>
+              </ul>
+            </article>
           </div>
+        </div>
 
-          <!-- 4 Chỉ số đo lường giá trị -->
-          <div class="subsection reveal-item">
-            <div class="subsection-title-wrap">
+        <!-- 4.4 Bốn chỉ số đo giá trị & Khối Sử dụng AI có trách nhiệm + Hướng phát triển -->
+        <div class="dual-grid subsection reveal">
+          <!-- 4 chỉ số đo giá trị -->
+          <div class="metrics-panel">
+            <div class="flex-between-header">
               <h3 class="subsection-title">4 chỉ số đo lường giá trị dự án</h3>
-              <span class="badge badge-warning">Chỉ công bố khi có số liệu thực tế</span>
+              <span class="note-pill">📌 Chỉ công bố khi có số liệu thực tế</span>
             </div>
             <div class="metrics-grid">
-              <div class="metric-card">
-                <span class="metric-num">KPI 01</span>
+              <div class="metric-box">
+                <span class="metric-tag">Chỉ số 01</span>
                 <h4>Điểm trình bày Trước / Sau</h4>
-                <p>Mức độ cải thiện điểm số thành phần trình bày trên cùng thang chấm (Rubric) của môn học.</p>
+                <p>Mức cải thiện điểm bố cục và lập luận của sinh viên qua các bài kiểm tra đối chứng.</p>
+                <span class="metric-placeholder">[Đo ở Giai đoạn 4]</span>
               </div>
-              <div class="metric-card">
-                <span class="metric-num">KPI 02</span>
+              <div class="metric-box">
+                <span class="metric-tag">Chỉ số 02</span>
                 <h4>Thời gian nhận phản hồi</h4>
-                <p>Rút ngắn thời gian từ lúc hoàn thành bài nháp đến khi biết rõ các mục trình bày còn thiếu.</p>
+                <p>Rút ngắn thời gian sinh viên biết được lỗi thiếu bước từ nhiều ngày xuống vài giây.</p>
+                <span class="metric-placeholder">[Đo ở Giai đoạn 4]</span>
               </div>
-              <div class="metric-card">
-                <span class="metric-num">KPI 03</span>
+              <div class="metric-box">
+                <span class="metric-tag">Chỉ số 03</span>
                 <h4>Tỷ lệ lỗi lặp lại</h4>
-                <p>Mức độ giảm dần của các lỗi cố hữu (như quên kết luận, thiếu công thức) sau chuỗi bài luyện tập.</p>
+                <p>Mức độ giảm dần của các lỗi quen thuộc (như quên kết luận, thiếu công thức) sau chuỗi bài tập.</p>
+                <span class="metric-placeholder">[Đo ở Giai đoạn 4]</span>
               </div>
-              <div class="metric-card">
-                <span class="metric-num">KPI 04</span>
-                <h4>Khả năng tự giải độc lập</h4>
-                <p>Tỷ lệ sinh viên tự trình bày đầy đủ các bước khi làm bài kiểm tra không có sự hỗ trợ của công cụ.</p>
+              <div class="metric-box">
+                <span class="metric-tag">Chỉ số 04</span>
+                <h4>Khả năng tự giải</h4>
+                <p>Tỷ lệ bài sinh viên tự hoàn thành mà không cần mở đến lời giải mẫu qua thời gian.</p>
+                <span class="metric-placeholder">[Đo ở Giai đoạn 4]</span>
               </div>
             </div>
           </div>
 
-        </div>
+          <!-- Sử dụng AI có trách nhiệm & Hướng phát triển -->
+          <div class="responsible-ai-panel">
+            <h3 class="subsection-title">Sử dụng AI có trách nhiệm &amp; Hướng phát triển</h3>
+            <div class="responsible-card">
+              <h4>🛡️ 4 Cam kết AI có trách nhiệm</h4>
+              <ol class="compact-ol">
+                <li><strong>Không làm hộ mù quáng:</strong> Gợi ý theo 3 mức; lời giải mẫu mở có điều kiện và luôn kèm giải thích từng bước.</li>
+                <li><strong>Minh bạch độ tin cậy:</strong> Hiển thị độ tin cậy của nhận xét; khẳng định điểm số chỉ mang tính tham khảo.</li>
+                <li><strong>Có giảng viên giám sát:</strong> Bộ khung trình bày và tiêu chí đánh giá đều qua giảng viên rà soát.</li>
+                <li><strong>Bảo vệ dữ liệu người học:</strong> Chỉ lưu lịch sử lỗi khi sinh viên đồng ý và cho phép xóa hoàn toàn.</li>
+              </ol>
+            </div>
 
-        <!-- 4.4. Sử dụng AI có trách nhiệm & Hướng phát triển -->
-        <div class="dual-grid-section reveal-item">
-          <div class="responsibility-box">
-            <h3>🛡️ 4 nguyên tắc Sử dụng AI có trách nhiệm</h3>
-            <ul class="check-list">
-              <li><strong>Không thay thế tư duy người học:</strong> Luôn yêu cầu sinh viên tự viết bài trước khi mở khóa nhận xét chuyên sâu.</li>
-              <li><strong>Tôn trọng quyền quyết định của giảng viên:</strong> Mọi đánh giá và điểm ước lượng trên web chỉ mang tính tham khảo học tập.</li>
-              <li><strong>Minh bạch giới hạn của AI:</strong> Luôn hiển thị mức độ tin cậy và khuyến khích đối chiếu với tài liệu chính thống của môn học.</li>
-              <li><strong>Bảo vệ quyền riêng tư:</strong> Tôn trọng quyền tự quyết dữ liệu (Opt-in/Xóa dữ liệu bất kỳ lúc nào) của sinh viên.</li>
-            </ul>
-          </div>
-
-          <div class="future-box">
-            <h3>🚀 Hướng phát triển trong tương lai</h3>
-            <ul class="check-list">
-              <li><strong>Mở rộng thư viện khung:</strong> Bổ sung thêm nhiều chuyên ngành đặc thù với sự đóng góp trực tiếp từ giảng viên các khoa.</li>
-              <li><strong>Hỗ trợ nhận diện ảnh chụp bài viết tay (OCR):</strong> Giúp sinh viên chụp ảnh bài làm tự luận trên giấy để đối chiếu khung trình bày.</li>
-              <li><strong>Cổng thông tin dành cho Giảng viên:</strong> Cho phép giảng viên tạo mã lớp học, tải lên Rubric chấm riêng và xem thống kê lỗi chung của cả lớp.</li>
-            </ul>
+            <div class="future-card">
+              <h4>🚀 Hướng phát triển tiếp theo</h4>
+              <p>Tích hợp nhận diện ảnh chụp bài viết tay (OCR) để góp ý bài làm trên giấy; mở rộng công cụ tạo khung trình bày dành riêng cho giảng viên và kết nối hệ thống LMS của nhà trường.</p>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ==================== MỤC 5: BẢN DEMO TƯƠNG TÁC ==================== -->
+    <!-- ===================================================================
+         MỤC 5: BẢN DEMO TƯƠNG TÁC (MÔ PHỎNG LUỒNG SẢN PHẨM)
+         =================================================================== -->
     <section id="demo" class="section-padding demo-section">
       <div class="container">
-        
-        <div class="section-header reveal-item">
-          <div class="demo-badge-wrap">
-            <span class="badge badge-accent">⚡ Bản mô phỏng minh họa ý tưởng (Interactive Prototype)</span>
+        <div class="section-header reveal">
+          <div class="badge-group">
+            <span class="badge badge-warning">🧪 Bản mô phỏng minh họa ý tưởng</span>
+            <span class="badge badge-outline">Chạy 100% trên trình duyệt • Không cần API Key</span>
           </div>
-          <h2 class="section-title">Trải nghiệm luồng sản phẩm AI Đồng Hành</h2>
+          <h2 class="section-title">Trải nghiệm Demo: AI Đồng Hành Giải &amp; Trình Bày</h2>
           <p class="section-lead">
-            Mô phỏng trực tiếp bằng dữ liệu mẫu trong JavaScript: Chọn đề bài → Xem gợi ý 3 mức độ → Đối chiếu khung trình bày → Lưu hồ sơ lỗi cá nhân.
+            Thực hành trọn vẹn luồng sản phẩm: Chọn đề mẫu → Xem khung trình bày → Mở gợi ý 3 mức → Mở lời giải mẫu có điều kiện → Nộp bài để AI soát khung và sắp xếp lại bài làm của bạn.
           </p>
         </div>
 
-        <!-- Khung ứng dụng Demo -->
-        <div class="demo-workspace reveal-item">
-          
-          <!-- BƯỚC 1 TRONG DEMO: Chọn Ngành, Môn, Dạng bài & Đề mẫu -->
-          <div class="demo-step-card">
-            <div class="demo-card-header">
-              <span class="demo-step-tag">Bước 1</span>
-              <h3>Thiết lập đầu vào & Chọn đề bài mẫu</h3>
+        <!-- BƯỚC 1 TRONG DEMO: Thanh chọn Ngành -> Môn -> Dạng bài & Đề mẫu -->
+        <div class="demo-selector-bar reveal" aria-label="Bộ chọn ngữ cảnh và đề bài mẫu">
+          <div class="selector-grid">
+            <div class="form-group">
+              <label for="select-major">1. Chọn Ngành học</label>
+              <select id="select-major" class="form-select">
+                <option value="all">-- Tất cả ngành mẫu --</option>
+                <option value="kinh-te-ky-thuat">Kinh tế / Kỹ thuật cơ sở</option>
+                <option value="du-lich">Quản trị Dịch vụ Du lịch &amp; Lữ hành</option>
+                <option value="cntt">Công nghệ thông tin (CNTT)</option>
+              </select>
             </div>
 
-            <div class="demo-controls-grid">
-              <div class="form-group">
-                <label for="select-major">Ngành học:</label>
-                <select id="select-major" class="form-select">
-                  <!-- Sẽ được đồng bộ tự động qua script.js hoặc chọn nhanh -->
-                  <option value="all">Tất cả ngành mẫu</option>
-                  <option value="cntt">Công nghệ thông tin</option>
-                  <option value="kinhte_kythuat">Kinh tế / Kỹ thuật</option>
-                  <option value="dulich">Quản trị Du lịch & Khách sạn</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="select-subject">Môn học:</label>
-                <input type="text" id="select-subject" class="form-input" value="Cấu trúc dữ liệu & Giải thuật" readonly aria-label="Môn học tương ứng">
-              </div>
-
-              <div class="form-group">
-                <label for="select-type">Dạng bài tự luận:</label>
-                <input type="text" id="select-type" class="form-input" value="Bài lập trình / Thuật toán" readonly aria-label="Dạng bài tự luận tương ứng">
-              </div>
-
-              <div class="form-group form-group-wide">
-                <label for="select-problem">📌 Chọn đề bài mẫu có sẵn để thử nghiệm nhanh:</label>
-                <select id="select-problem" class="form-select form-select-highlight">
-                  <option value="prob_algo">Đề 1 [Bài lập trình/Thuật toán - CNTT]: Tìm dãy con liên tiếp dài k có tổng lớn nhất</option>
-                  <option value="prob_calc">Đề 2 [Bài tính toán - Kinh tế/Kỹ thuật]: Tính điểm hòa vốn và sản lượng mục tiêu</option>
-                  <option value="prob_tour">Đề 3 [Phân tích tình huống - Du lịch]: Xử lý sự cố khách đoàn nhận phòng trễ giờ</option>
-                </select>
-              </div>
+            <div class="form-group">
+              <label for="select-subject">2. Môn học &amp; Dạng bài</label>
+              <select id="select-subject" class="form-select">
+                <option value="tinh-toan">Toán Kinh tế / Vật lý (Bài tính toán)</option>
+                <option value="tinh-huong">Nghiệp vụ Du lịch (Phân tích tình huống)</option>
+                <option value="lap-trinh">Cấu trúc dữ liệu &amp; Giải thuật (Lập trình/Thuật toán)</option>
+              </select>
             </div>
 
-            <!-- Hộp hiển thị đề bài chi tiết -->
-            <div class="problem-display-box" id="problem-display-box">
-              <div class="problem-meta">
-                <span class="badge badge-primary" id="demo-meta-major">Ngành: CNTT</span>
-                <span class="badge badge-outline" id="demo-meta-type">Dạng: Bài lập trình / Thuật toán</span>
-              </div>
-              <h4 id="demo-problem-title">Đề bài: Tìm tổng lớn nhất của dãy con liên tiếp độ dài k</h4>
-              <p id="demo-problem-text">
-                Cho mảng số nguyên A gồm n phần tử và một số nguyên dương k (1 ≤ k ≤ n). Hãy trình bày thuật toán tìm tổng lớn nhất của một dãy con gồm k phần tử liên tiếp trong mảng A (yêu cầu tối ưu hơn cách duyệt 2 vòng lặp lồng nhau) và đánh giá độ phức tạp của thuật toán.
-              </p>
+            <div class="form-group">
+              <label for="select-problem">3. Chọn Đề bài mẫu có sẵn</label>
+              <select id="select-problem" class="form-select">
+                <option value="prob-calc">Đề 1: [Tính toán] Tính điểm hòa vốn và lợi nhuận mục tiêu</option>
+                <option value="prob-tour">Đề 2: [Tình huống Du lịch] Xử lý sự cố trễ xe đón đoàn tại sân bay</option>
+                <option value="prob-algo">Đề 3: [Thuật toán CNTT] Kiểm tra mảng đối xứng (Palindrome Array)</option>
+              </select>
             </div>
           </div>
-
-          <!-- BƯỚC 2 TRONG DEMO: 2 Cột (Trái: Gợi ý 3 mức & Lời giải khóa | Phải: Khung trình bày Checklist) -->
-          <div class="demo-two-cols">
-            
-            <!-- Cột Trái: Hỗ trợ tìm hướng giải (3 mức gợi ý) -->
-            <div class="demo-step-card">
-              <div class="demo-card-header">
-                <span class="demo-step-tag">Bước 2A</span>
-                <h3>Hỗ trợ tìm hướng giải (Không làm hộ)</h3>
-              </div>
-
-              <p class="demo-helper-text">
-                Nếu chưa biết bắt đầu từ đâu, hãy bấm nút bên dưới. Mỗi lần bấm sẽ mở thêm 1 mức gợi ý.
-              </p>
-
-              <div class="hint-actions">
-                <button type="button" id="btn-unlock-hint" class="btn btn-secondary">
-                  💡 Mình bí hướng giải (Mở gợi ý <span id="hint-counter">0/3</span>)
-                </button>
-                <button type="button" id="btn-reset-hint" class="btn btn-ghost btn-sm" title="Đóng lại các gợi ý">
-                  Đặt lại gợi ý
-                </button>
-              </div>
-
-              <!-- Danh sách 3 mức gợi ý -->
-              <div class="hints-list" id="hints-list" aria-live="polite">
-                <div class="hint-item locked" id="hint-level-1">
-                  <div class="hint-header">
-                    <strong>Mức 1: Nhắc kiến thức liên quan</strong>
-                    <span class="hint-status">🔒 Chưa mở</span>
-                  </div>
-                  <p class="hint-body" id="hint-text-1">Bấm nút "Mình bí hướng giải" lần 1 để xem gợi ý kiến thức nền tảng.</p>
-                </div>
-
-                <div class="hint-item locked" id="hint-level-2">
-                  <div class="hint-header">
-                    <strong>Mức 2: Chỉ bước tiếp theo cần làm</strong>
-                    <span class="hint-status">🔒 Chưa mở</span>
-                  </div>
-                  <p class="hint-body" id="hint-text-2">Bấm nút "Mình bí hướng giải" lần 2 để xem bước chuyển tiếp.</p>
-                </div>
-
-                <div class="hint-item locked" id="hint-level-3">
-                  <div class="hint-header">
-                    <strong>Mức 3: Phân tích cấu trúc cách giải</strong>
-                    <span class="hint-status">🔒 Chưa mở</span>
-                  </div>
-                  <p class="hint-body" id="hint-text-3">Bấm nút "Mình bí hướng giải" lần 3 để xem phân tích luồng giải.</p>
-                </div>
-              </div>
-
-              <!-- Hộp lời giải chi tiết bị KHÓA cho đến khi nộp bài -->
-              <div class="solution-lock-box locked" id="solution-lock-box">
-                <div class="solution-lock-header">
-                  <span class="lock-icon" id="solution-lock-icon" aria-hidden="true">🔒</span>
-                  <div>
-                    <h4>Lời giải trình bày mẫu để đối chiếu</h4>
-                    <small id="solution-lock-status">Đang khóa để đảm bảo nguyên tắc "Đồng hành, không làm hộ". Chỉ mở sau khi bạn nhập bài làm và bấm Nộp.</small>
-                  </div>
-                </div>
-                <div class="solution-content" id="solution-content" hidden>
-                  <!-- Nội dung lời giải mẫu sẽ hiển thị tại đây sau khi nộp bài -->
-                </div>
-              </div>
-            </div>
-
-            <!-- Cột Phải: Khung trình bày đề xuất (Checklist) -->
-            <div class="demo-step-card">
-              <div class="demo-card-header">
-                <span class="demo-step-tag">Bước 2B</span>
-                <h3>Khung trình bày đề xuất (Checklist)</h3>
-              </div>
-
-              <p class="demo-helper-text">
-                Hãy đảm bảo bài viết của bạn có đủ các phần dưới đây. Khi bạn nộp bài, AI sẽ tự động đánh dấu phần <strong>Đã có</strong> hoặc <strong>Thiếu</strong>.
-              </p>
-
-              <ul class="framework-checklist" id="framework-checklist" aria-live="polite">
-                <!-- Sẽ được render tự động từ dữ liệu JSON trong script.js -->
-                <li class="checklist-item">
-                  <span class="check-indicator">⬜</span>
-                  <div class="check-info">
-                    <strong>1. Xác định Input / Output & Điều kiện biên</strong>
-                    <small>Nêu rõ dữ liệu vào/ra và xét trường hợp đặc biệt (ví dụ n &lt; k).</small>
-                  </div>
-                </li>
-                <li class="checklist-item">
-                  <span class="check-indicator">⬜</span>
-                  <div class="check-info">
-                    <strong>2. Nêu tên kỹ thuật / Nguyên lý áp dụng</strong>
-                    <small>Chỉ rõ phương pháp sử dụng (ví dụ: Cửa sổ trượt - Sliding Window).</small>
-                  </div>
-                </li>
-                <li class="checklist-item">
-                  <span class="check-indicator">⬜</span>
-                  <div class="check-info">
-                    <strong>3. Trình bày các bước biến đổi / Công thức</strong>
-                    <small>Mô tả cách tính tổng đầu và công thức cập nhật khi trượt cửa sổ.</small>
-                  </div>
-                </li>
-                <li class="checklist-item">
-                  <span class="check-indicator">⬜</span>
-                  <div class="check-info">
-                    <strong>4. Đánh giá độ phức tạp & Kết luận</strong>
-                    <small>Nêu độ phức tạp thời gian O(n), không gian O(1) và kết luận đáp án.</small>
-                  </div>
-                </li>
-              </ul>
-
-              <div class="sample-fill-bar">
-                <span>Muốn thử nhanh? Điền sẵn bài nháp mẫu:</span>
-                <div class="sample-btn-group">
-                  <button type="button" id="btn-fill-missing" class="btn btn-outline btn-sm">
-                    📝 Điền bài nháp THIẾU bước
-                  </button>
-                  <button type="button" id="btn-fill-good" class="btn btn-outline btn-sm">
-                    ✨ Điền bài nháp ĐẦY ĐỦ bước
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- BƯỚC 3 TRONG DEMO: Ô nhập bài làm + Kết quả phản hồi -->
-          <div class="demo-step-card">
-            <div class="demo-card-header">
-              <span class="demo-step-tag">Bước 3</span>
-              <h3>Nhập bài làm của bạn & Nhận phản hồi trình bày</h3>
-            </div>
-
-            <div class="editor-area">
-              <label for="student-essay-input" class="sr-only">Nội dung bài làm tự luận của sinh viên</label>
-              <textarea id="student-essay-input" class="essay-textarea" rows="6" placeholder="Nhập bài giải tự luận của bạn vào đây (hoặc bấm nút 'Điền bài nháp THIẾU bước' ở trên để thử nghiệm nhanh)..."></textarea>
-              
-              <!-- Thông báo lỗi khi để trống hoặc quá ngắn -->
-              <div id="essay-error-msg" class="error-alert" role="alert" hidden>
-                ⚠️ Vui lòng nhập nội dung bài làm (tối thiểu vài câu lập luận) trước khi bấm nộp để AI có cơ sở đối chiếu khung trình bày!
-              </div>
-
-              <div class="editor-toolbar">
-                <span class="word-count" id="essay-word-count">Độ dài: 0 từ</span>
-                <div class="editor-actions">
-                  <button type="button" id="btn-clear-essay" class="btn btn-ghost">Xóa trắng</button>
-                  <button type="button" id="btn-submit-essay" class="btn btn-primary">
-                    🚀 Nộp để nhận phản hồi
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- KHU VỰC HIỂN THỊ KẾT QUẢ PHẢN HỒI CỦA AI -->
-            <div id="ai-feedback-container" class="ai-feedback-container" aria-live="polite" hidden>
-              <div class="feedback-top-bar">
-                <div class="feedback-summary">
-                  <h4>Kết quả đối chiếu Khung trình bày</h4>
-                  <p id="feedback-overview-text">Đã kiểm tra các mục trong bài làm của bạn.</p>
-                </div>
-                <div class="feedback-badges">
-                  <div class="confidence-pill">
-                    <span>Độ tin cậy phân tích:</span>
-                    <strong id="feedback-confidence">Cao (Đối chiếu từ khóa & cấu trúc)</strong>
-                  </div>
-                  <div class="score-estimate-pill">
-                    <span>Mức đáp ứng khung:</span>
-                    <strong id="feedback-score-ratio">0/4 mục</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div class="disclaimer-banner">
-                ℹ️ <strong>Lưu ý quan trọng:</strong> AI giữ nguyên cách giải của bạn. Điểm/mức độ hoàn thiện chỉ là ước lượng tham khảo về mặt bố cục trình bày, <strong>giảng viên là người quyết định điểm cuối cùng</strong>.
-              </div>
-
-              <!-- Danh sách chi tiết từng mục ĐÃ CÓ / THIẾU kèm lý do và gợi ý sửa -->
-              <div class="feedback-details-grid" id="feedback-details-grid">
-                <!-- Được sinh tự động bởi script.js -->
-              </div>
-            </div>
-          </div>
-
-          <!-- BƯỚC 4 TRONG DEMO: Bảng Hồ sơ lỗi của bạn (LocalStorage) -->
-          <div class="demo-step-card">
-            <div class="demo-card-header">
-              <span class="demo-step-tag">Bước 4</span>
-              <h3>Hồ sơ lỗi trình bày của bạn & Gợi ý luyện tập cá nhân hóa</h3>
-            </div>
-
-            <div class="privacy-controls-bar">
-              <label class="checkbox-label" for="consent-storage-checkbox">
-                <input type="checkbox" id="consent-storage-checkbox" checked>
-                <span>Tôi đồng ý lưu lịch sử lỗi trình bày trên trình duyệt này (LocalStorage) để theo dõi tiến bộ cá nhân.</span>
-              </label>
-              <button type="button" id="btn-clear-history" class="btn btn-danger-outline btn-sm">
-                🗑️ Xóa toàn bộ dữ liệu lịch sử
-              </button>
-            </div>
-
-            <div id="storage-status-note" class="storage-status-note" aria-live="polite"></div>
-
-            <div class="table-responsive">
-              <table class="data-table" id="error-profile-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Nhóm lỗi trình bày phát hiện</th>
-                    <th scope="col">Số lần lặp lại</th>
-                    <th scope="col">Gợi ý bài luyện tập & Cách khắc phục cá nhân hóa</th>
-                  </tr>
-                </thead>
-                <tbody id="error-profile-tbody">
-                  <!-- Sẽ được cập nhật động từ LocalStorage hoặc dữ liệu khởi tạo mẫu trong script.js -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-
         </div>
 
+        <!-- GIAO DIỆN CHÍNH CỦA DEMO (2 CỘT) -->
+        <div class="demo-workspace reveal">
+          <!-- CỘT TRÁI: Đề bài + Khung trình bày + Đồng hành 3 mức + Lời giải mẫu có điều kiện -->
+          <div class="demo-left-col">
+            <!-- Hộp hiển thị Đề bài đang chọn -->
+            <div class="demo-panel problem-panel">
+              <div class="panel-header">
+                <span class="panel-tag" id="demo-problem-badge">Dạng bài: Bài tính toán</span>
+                <span class="panel-criteria" id="demo-problem-criteria">Tiêu chí: Đủ công thức, bước thay số, đơn vị &amp; kết luận</span>
+              </div>
+              <h3 class="demo-problem-title" id="demo-problem-title">
+                Đề 1: Tính sản lượng hòa vốn và kiểm tra mục tiêu lợi nhuận
+              </h3>
+              <p class="demo-problem-text" id="demo-problem-desc">
+                Một xưởng sản xuất có định phí (FC) là 120 triệu đồng/tháng, biến phí trên mỗi sản phẩm (AVC) là 60.000 đồng, giá bán (P) là 100.000 đồng/sản phẩm. Hãy tính sản lượng hòa vốn (Q0) và cho biết nếu xưởng bán được 4.000 sản phẩm/tháng thì đạt lợi nhuận bao nhiêu?
+              </p>
+            </div>
+
+            <!-- Hộp Khung trình bày đề xuất (Checklist) -->
+            <div class="demo-panel framework-panel">
+              <div class="panel-header">
+                <h4>📋 Khung trình bày đề xuất (Checklist chấm điểm)</h4>
+                <span class="text-xs text-muted">Cập nhật tự động khi bạn nộp bài</span>
+              </div>
+              <ul class="framework-checklist" id="framework-checklist" aria-live="polite">
+                <!-- JavaScript sẽ render động các mục của khung trình bày tại đây -->
+              </ul>
+            </div>
+
+            <!-- Hộp Đồng hành bước giải (Gợi ý 3 mức) -->
+            <div class="demo-panel hints-panel">
+              <div class="panel-header">
+                <div>
+                  <h4>💡 1. Đồng hành bước giải (Gợi ý 3 mức)</h4>
+                  <p class="text-xs text-muted">Mỗi lần bấm sẽ mở thêm 1 tầng gợi ý từ nhẹ đến chi tiết.</p>
+                </div>
+                <button type="button" id="btn-hint" class="btn btn-primary btn-sm">
+                  🤔 Mình bí hướng giải (<span id="hint-counter">0/3</span>)
+                </button>
+              </div>
+
+              <div id="hints-container" class="hints-list" aria-live="polite">
+                <p class="empty-hint-msg">Bạn hãy thử suy nghĩ hướng giải trước. Nếu bí, bấm nút <strong>“Mình bí hướng giải”</strong> để AI mở gợi ý từng mức nhé!</p>
+              </div>
+            </div>
+
+            <!-- Hộp Lời giải mẫu từng bước (Làm mẫu có điều kiện) -->
+            <div class="demo-panel solution-panel">
+              <div class="panel-header">
+                <div>
+                  <h4>🔓 2. Lời giải mẫu từng bước (Làm mẫu có điều kiện)</h4>
+                  <p class="text-xs text-muted" id="solution-lock-status">
+                    🔒 Đang khóa: Chỉ mở khi bạn đã tự viết nháp bài làm (ít nhất vài dòng) HOẶC đã mở hết 3 mức gợi ý và xác nhận đã tự thử.
+                  </p>
+                </div>
+                <button type="button" id="btn-model-solution" class="btn btn-secondary btn-sm" disabled aria-disabled="true">
+                  Xem lời giải mẫu
+                </button>
+              </div>
+
+              <!-- Hộp xác nhận khi sinh viên đã dùng hết 3 mức gợi ý mà chưa viết được bài -->
+              <div id="confirm-tried-box" class="confirm-tried-box" hidden>
+                <p>Bạn đã xem hết 3 mức gợi ý. Để đảm bảo nguyên tắc học thật, hãy xác nhận trước khi mở lời giải mẫu:</p>
+                <button type="button" id="btn-confirm-tried" class="btn btn-warning btn-sm">
+                  ✋ Mình đã thử suy nghĩ rồi, cho mình xem lời giải mẫu để học cách làm
+                </button>
+              </div>
+
+              <!-- Khu vực hiển thị lời giải mẫu từng bước (Làm gì & Vì sao làm vậy) -->
+              <div id="model-solution-container" class="model-solution-box" hidden aria-live="polite">
+                <div class="solution-progress-bar">
+                  <span id="solution-step-indicator">Đang xem bước 1</span>
+                  <button type="button" id="btn-next-solution-step" class="btn btn-primary btn-sm">
+                    Bước tiếp theo →
+                  </button>
+                </div>
+
+                <div id="solution-steps-list" class="solution-steps-list">
+                  <!-- JavaScript sẽ render từng bước: "Làm gì" + "Vì sao làm vậy" tại đây -->
+                </div>
+
+                <div class="solution-reminder" role="note">
+                  <strong>📌 Lời nhắc học thuật:</strong> Lời giải mẫu dùng để bạn đối chiếu phương pháp và khung trình bày. <em>Hãy tự giải lại một bài tương tự để kiểm tra mình đã thực sự hiểu bài!</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CỘT PHẢI: Nhập bài làm + Nhận phản hồi + Gợi ý viết lại theo khung + Hồ sơ lỗi -->
+          <div class="demo-right-col">
+            <!-- Hộp Nhập bài làm của sinh viên -->
+            <div class="demo-panel editor-panel">
+              <div class="panel-header">
+                <div>
+                  <h4>✍️ 3. Bài làm tự luận của bạn</h4>
+                  <p class="text-xs text-muted">Nhập lời giải của bạn hoặc bấm nút điền thử bài làm thiếu bước để xem AI phản hồi.</p>
+                </div>
+                <div class="quick-fill-group">
+                  <button type="button" id="btn-fill-flawed" class="btn btn-outline btn-xs" title="Điền thử một bài làm đúng kết quả nhưng thiếu bước và quên kết luận">
+                    Điền thử bài thiếu bước
+                  </button>
+                  <button type="button" id="btn-fill-good" class="btn btn-outline btn-xs" title="Điền thử một bài làm đầy đủ khung trình bày">
+                    Điền thử bài đủ khung
+                  </button>
+                </div>
+              </div>
+
+              <label for="student-answer" class="sr-only">Nội dung bài làm của sinh viên</label>
+              <textarea
+                id="student-answer"
+                class="answer-textarea"
+                rows="8"
+                placeholder="Nhập bài giải của bạn tại đây... (Khi bạn gõ ít nhất 2 dòng hoặc 60 ký tự, nút 'Xem lời giải mẫu' cũng sẽ tự động mở khóa để bạn đối chiếu khi cần)."
+              ></textarea>
+
+              <div class="editor-footer">
+                <span id="answer-stats" class="text-xs text-muted">0 ký tự • 0 dòng</span>
+                <div class="editor-actions">
+                  <button type="button" id="btn-submit-answer" class="btn btn-primary">
+                    ✅ Nộp để nhận phản hồi
+                  </button>
+                  <button type="button" id="btn-rewrite-frame" class="btn btn-secondary" disabled aria-disabled="true">
+                    🪄 Gợi ý trình bày lại bài của tôi
+                  </button>
+                </div>
+              </div>
+
+              <!-- Thông báo lỗi nếu nộp bài trống -->
+              <div id="editor-error-msg" class="alert-error" role="alert" hidden>
+                ⚠️ Bài làm đang để trống! Bạn hãy nhập ít nhất vài câu giải hoặc bấm "Điền thử bài thiếu bước" trước khi nộp nhé.
+              </div>
+            </div>
+
+            <!-- Hộp Kết quả Đánh giá & Phản hồi từ AI -->
+            <div id="feedback-result" class="demo-panel feedback-panel" hidden aria-live="polite">
+              <div class="panel-header">
+                <div>
+                  <h4>🔍 4. Đánh giá bố cục &amp; Phản hồi chi tiết</h4>
+                  <p class="disclaimer-text">
+                    ⚖️ <strong>Lưu ý:</strong> Điểm chỉ là ước lượng tham khảo về mặt bố cục, giảng viên quyết định điểm cuối cùng.
+                  </p>
+                </div>
+                <div class="confidence-badges">
+                  <span class="badge badge-primary" id="feedback-score-badge">Độ phủ khung: --</span>
+                  <span class="badge badge-outline" id="feedback-confidence-badge">Mức độ tin cậy: Cao</span>
+                </div>
+              </div>
+
+              <div id="feedback-summary" class="feedback-summary-box"></div>
+              <div id="feedback-details-list" class="feedback-details-list">
+                <!-- JavaScript render từng mục ĐÃ CÓ / THIẾU kèm lý do và gợi ý sửa -->
+              </div>
+            </div>
+
+            <!-- Hộp Gợi ý viết lại theo khung (Giữ nguyên ý sinh viên) -->
+            <div id="rewrite-result" class="demo-panel rewrite-panel" hidden aria-live="polite">
+              <div class="panel-header">
+                <div>
+                  <h4>📐 5. Gợi ý trình bày lại bài của bạn theo khung chuẩn</h4>
+                  <p class="text-xs text-muted">
+                    Hệ thống <strong>giữ nguyên câu chữ và cách giải của bạn</strong>, chỉ sắp xếp lại vào đúng các mục của khung; phần nào bạn chưa viết sẽ được đánh dấu để bạn tự bổ sung.
+                  </p>
+                </div>
+              </div>
+              <div id="rewrite-sections-container" class="rewrite-sections-container">
+                <!-- JavaScript tách câu của sinh viên vào từng mục của khung tại đây -->
+              </div>
+            </div>
+
+            <!-- Bảng Hồ sơ học tập của bạn (localStorage) -->
+            <div class="demo-panel profile-panel" id="user-profile-panel">
+              <div class="panel-header">
+                <div>
+                  <h4>📊 6. Hồ sơ của bạn (Theo dõi lỗi lặp lại &amp; Khả năng tự giải)</h4>
+                  <p class="text-xs text-muted">Giúp bạn nhìn rõ thói quen trình bày và giảm dần sự phụ thuộc vào lời giải mẫu.</p>
+                </div>
+                <button type="button" id="btn-clear-storage" class="btn btn-outline btn-xs">
+                  🗑️ Xóa dữ liệu
+                </button>
+              </div>
+
+              <!-- Checkbox đồng ý lưu dữ liệu -->
+              <div class="consent-bar">
+                <label class="checkbox-label" for="consent-storage">
+                  <input type="checkbox" id="consent-storage" checked />
+                  <span>Tôi đồng ý lưu lịch sử lỗi và số lần xem lời giải mẫu trên trình duyệt này (localStorage) để cá nhân hóa luyện tập.</span>
+                </label>
+              </div>
+
+              <!-- 3 Thẻ thống kê tự giải -->
+              <div class="profile-stats-grid">
+                <div class="stat-card">
+                  <span class="stat-label">Số bài đã tự nộp</span>
+                  <strong class="stat-value" id="stat-submitted">0</strong>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-label">Số lần mở lời giải mẫu</span>
+                  <strong class="stat-value" id="stat-solution-views">0</strong>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-label">Chỉ số tự lực giải bài</span>
+                  <strong class="stat-value" id="stat-self-solve-rate">Chưa có dữ liệu</strong>
+                </div>
+              </div>
+
+              <!-- Danh sách lỗi lặp lại & Gợi ý bài luyện tập -->
+              <div class="profile-lists-grid">
+                <div class="profile-subbox">
+                  <h5>🔁 Các lỗi trình bày lặp lại của bạn</h5>
+                  <ul id="repeated-errors-list" class="compact-ul">
+                    <li class="text-muted">Chưa ghi nhận lỗi lặp lại nào. Hãy thử nộp bài ở trên!</li>
+                  </ul>
+                </div>
+                <div class="profile-subbox">
+                  <h5>🎯 Gợi ý bài luyện tập cá nhân hóa</h5>
+                  <ul id="practice-suggestions" class="compact-ul">
+                    <li class="text-muted">Gợi ý bài tập sẽ xuất hiện dựa trên mục bạn hay bỏ sót.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ==================== FOOTER / LIÊN HỆ ==================== -->
+  <!-- =====================================================================
+       MỤC LIÊN HỆ & FOOTER
+       ===================================================================== -->
   <footer id="lien-he" class="site-footer section-padding">
     <div class="container">
-      <div class="footer-grid">
-        
+      <div class="footer-grid reveal">
+        <!-- Cột 1: Thông tin đề tài & Học phần -->
         <div class="footer-col">
-          <div class="brand-logo footer-logo">
-            <span class="logo-icon" aria-hidden="true">✍️</span>
-            <div class="logo-text">
-              <span class="logo-title">AI Tự Luận</span>
-              <span class="logo-subtitle">Đồng hành • Không làm hộ</span>
+          <div class="brand-logo footer-brand">
+            <span class="brand-icon" aria-hidden="true">🎓</span>
+            <div class="brand-text">
+              <span class="brand-title">AI Đồng Hành Bài Tự Luận</span>
+              <span class="brand-sub">Đồng hành từng bước, làm mẫu có điều kiện</span>
             </div>
           </div>
           <p class="footer-desc">
-            Đề tài: <strong>Nghiên cứu các lỗi thường gặp và đề xuất giải pháp tối ưu hóa phương pháp làm bài tập tự luận cho sinh viên bằng AI.</strong>
+            <strong>Tên đầy đủ đề tài:</strong> Nghiên cứu các lỗi thường gặp và đề xuất giải pháp tối ưu hóa phương pháp làm bài tập tự luận cho sinh viên bằng AI.
           </p>
-          <p class="footer-note">
-            Website phục vụ trình bày đồ án môn học Đổi mới sáng tạo. Mọi số liệu khảo sát thực nghiệm sẽ chỉ được cập nhật sau khi hoàn tất quá trình kiểm chứng thực tế.
-          </p>
+          <div class="academic-meta">
+            <p><strong>Môn học:</strong> <span>[Tên môn học - Ví dụ: Đổi mới sáng tạo và Khởi nghiệp]</span></p>
+            <p><strong>Giảng viên hướng dẫn:</strong> <span>[Tên giảng viên hướng dẫn]</span></p>
+            <p><strong>Đơn vị đào tạo:</strong> <span>[Tên Khoa / Trường Đại học]</span></p>
+          </div>
         </div>
 
+        <!-- Cột 2: Danh sách 5 thành viên nhóm The Five Outlaws -->
         <div class="footer-col">
-          <h4>Thông tin Nhóm thực hiện</h4>
-          <ul class="footer-info-list">
-            <li><strong>Tên nhóm:</strong> <span>[Tên nhóm]</span></li>
-            <li><strong>Môn học:</strong> <span>Đổi mới sáng tạo & Khởi nghiệp ([Mã học phần])</span></li>
-            <li><strong>Trường / Khoa:</strong> <span>[Tên Khoa / Trường Đại học]</span></li>
-            <li><strong>Giảng viên hướng dẫn:</strong> <span>[Tên giảng viên hướng dẫn]</span></li>
-            <li><strong>Email liên hệ:</strong> <a href="mailto:example@domain.edu.vn">[Email liên hệ]</a></li>
+          <h3 class="footer-heading">Nhóm thực hiện: The Five Outlaws</h3>
+          <ul class="team-list">
+            <li>
+              <span class="member-num">01</span>
+              <span class="member-name">Nguyễn Đức Trung</span>
+              <span class="member-role">Thành viên</span>
+            </li>
+            <li>
+              <span class="member-num">02</span>
+              <span class="member-name">Lê Hải Hoàng</span>
+              <span class="member-role">Thành viên • Liên hệ chính</span>
+            </li>
+            <li>
+              <span class="member-num">03</span>
+              <span class="member-name">Nguyễn Duy Đức</span>
+              <span class="member-role">Thành viên</span>
+            </li>
+            <li>
+              <span class="member-num">04</span>
+              <span class="member-name">Đỗ Hải Đăng</span>
+              <span class="member-role">Thành viên</span>
+            </li>
+            <li>
+              <span class="member-num">05</span>
+              <span class="member-name">Lê Nguyên Hoàng</span>
+              <span class="member-role">Thành viên</span>
+            </li>
           </ul>
         </div>
 
+        <!-- Cột 3: Liên hệ & Điều hướng nhanh -->
         <div class="footer-col">
-          <h4>Danh sách Thành viên</h4>
-          <ul class="footer-members-list">
-            <li>👤 <strong>[Tên thành viên 1]</strong> — Nhóm trưởng / Định hướng sản phẩm</li>
-            <li>👤 <strong>[Tên thành viên 2]</strong> — Nghiên cứu khung phương pháp & Khảo sát</li>
-            <li>👤 <strong>[Tên thành viên 3]</strong> — Thiết kế UI/UX & Phát triển Front-end</li>
-            <li>👤 <strong>[Tên thành viên 4]</strong> — Thiết kế Prompt AI & Kiểm thử</li>
-          </ul>
-        </div>
+          <h3 class="footer-heading">Thông tin liên hệ</h3>
+          <p class="footer-contact-text">
+            Mọi góp ý từ Hội đồng chấm thi, quý Thầy/Cô và các bạn sinh viên xin vui lòng gửi về địa chỉ email đại diện của nhóm:
+          </p>
+          <a href="mailto:lehaihoanghg@gmail.com" class="mailto-box">
+            <span aria-hidden="true">✉️</span>
+            <span>lehaihoanghg@gmail.com</span>
+          </a>
 
+          <div class="footer-quick-links">
+            <a href="#hero">Lên đầu trang ↑</a>
+            <a href="#van-de">1. Vấn đề</a>
+            <a href="#kha-thi">2. Khả thi</a>
+            <a href="#khac-biet">3. Khác biệt</a>
+            <a href="#gia-tri-ai">4. Giá trị AI</a>
+            <a href="#demo">Trải nghiệm Demo</a>
+          </div>
+        </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Dự án của <strong>[Tên nhóm]</strong>. Thiết kế tối ưu cho GitHub Pages & Netlify Drop (HTML/CSS/JS thuần).</p>
-        <a href="#top" class="back-to-top">↑ Lên đầu trang</a>
+        <p>© Dự án Đổi mới sáng tạo — Nhóm <strong>The Five Outlaws</strong>. Thiết kế tối ưu cho trình bày học thuật và minh họa nguyên lý sản phẩm.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Liên kết file JavaScript (sẽ cung cấp ở bước tiếp theo) -->
+  <!-- Liên kết tới file JavaScript (sẽ tạo ở bước tiếp theo) -->
   <script src="script.js"></script>
 </body>
 </html>
